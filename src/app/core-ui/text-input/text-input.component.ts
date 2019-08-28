@@ -16,8 +16,6 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
   .grey {
     text-align: center;
     font: Regular 14px/32px Source Sans Pro;
-    top: 248px;
-    left: 64px;
     width: 308px;
     height: 40px;
     letter-spacing: 0;
@@ -27,11 +25,9 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  .prjk {
+  .projek {
     text-align: center;
     font: Regular 14px/32px Source Sans Pro;
-    top: 248px;
-    left: 64px;
     width: 308px;
     height: 40px;
     letter-spacing: 0;
@@ -44,8 +40,6 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
   .abu {
     text-align: center;
     font: Regular 14px/32px Source Sans Pro;
-    top: 304px;
-    left: 64px;
     width: 308px;
     height: 40px;
     letter-spacing: 0;
@@ -55,11 +49,9 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  .kmu {
+  .bagian {
     text-align: center;
     font: Regular 14px/32px Source Sans Pro;
-    top: 304px;
-    left: 64px;
     width: 308px;
     height: 40px;
     letter-spacing: 0;
@@ -72,8 +64,6 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
   .kecil {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
-    top: 184px;
-    left: 898px;
     width: 318px;
     height: 40px;
     letter-spacing: 0;
@@ -87,8 +77,6 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
   .besar {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
-    top: 236px;
-    left: 898px;
     width: 318px;
     height: 120px;
     letter-spacing: 0;
@@ -98,11 +86,9 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  .usr {
+  .user {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
-    top: 360px;
-    left: 196px;
     width: 340px;
     height: 40px;
     letter-spacing: 0;
@@ -112,11 +98,9 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  .psw {
+  .pass {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
-    top: 360px;
-    left: 196px;
     width: 340px;
     height: 40px;
     letter-spacing: 0;
@@ -129,8 +113,6 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
   .biru {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
-    top: 360px;
-    left: 196px;
     width: 340px;
     height: 40px;
     letter-spacing: 0;
@@ -141,11 +123,9 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  .bru {
+  .blue {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
-    top: 416px;
-    left: 196px;
     width: 340px;
     height: 40px;
     letter-spacing: 0;
@@ -156,25 +136,9 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  .mrh {
+  .merah {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
-    top: 360px;
-    left: 196px;
-    width: 340px;
-    height: 40px;
-    letter-spacing: 0;
-    color: #E7E7E7;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #D54F4F;
-    border-radius: 6px;
-    opacity: 1;
-  }
-  .merh {
-    text-align: left;
-    font: Regular 14px/32px Source Sans Pro;
-    top: 416px;
-    left: 196px;
     width: 340px;
     height: 40px;
     letter-spacing: 0;
