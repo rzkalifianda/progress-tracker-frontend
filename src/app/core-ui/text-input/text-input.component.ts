@@ -37,30 +37,6 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  .abu {
-    text-align: center;
-    font: Regular 14px/32px Source Sans Pro;
-    width: 308px;
-    height: 40px;
-    letter-spacing: 0;
-    color: #E7E7E7;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #E7E7E7;
-    border-radius: 6px;
-    opacity: 1;
-  }
-  .bagian {
-    text-align: center;
-    font: Regular 14px/32px Source Sans Pro;
-    width: 308px;
-    height: 40px;
-    letter-spacing: 0;
-    color: #E7E7E7;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #0871CE;
-    border-radius: 6px;
-    opacity: 1;
-  }
   .kecil {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
@@ -73,7 +49,6 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  
   .besar {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
@@ -98,32 +73,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
-  .pass {
-    text-align: left;
-    font: Regular 14px/32px Source Sans Pro;
-    width: 340px;
-    height: 40px;
-    letter-spacing: 0;
-    color: #E7E7E7;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #E7E7E7;
-    border-radius: 6px;
-    opacity: 1;
-  }
   .biru {
-    text-align: left;
-    font: Regular 14px/32px Source Sans Pro;
-    width: 340px;
-    height: 40px;
-    letter-spacing: 0;
-    color: #E7E7E7;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 2px 7px #0871CE;
-    border: 1px solid #0871CE;
-    border-radius: 6px;
-    opacity: 1;
-  }
-  .blue {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
     width: 340px;
