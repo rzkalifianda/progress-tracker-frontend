@@ -27,6 +27,20 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
+  .prjk {
+    text-align: center;
+    font: Regular 14px/32px Source Sans Pro;
+    top: 248px;
+    left: 64px;
+    width: 308px;
+    height: 40px;
+    letter-spacing: 0;
+    color: #E7E7E7;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #0871CE;
+    border-radius: 6px;
+    opacity: 1;
+  }
   .abu {
     text-align: center;
     font: Regular 14px/32px Source Sans Pro;
@@ -38,6 +52,20 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     color: #E7E7E7;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #E7E7E7;
+    border-radius: 6px;
+    opacity: 1;
+  }
+  .kmu {
+    text-align: center;
+    font: Regular 14px/32px Source Sans Pro;
+    top: 304px;
+    left: 64px;
+    width: 308px;
+    height: 40px;
+    letter-spacing: 0;
+    color: #E7E7E7;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #0871CE;
     border-radius: 6px;
     opacity: 1;
   }
@@ -55,6 +83,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
     border-radius: 6px;
     opacity: 1;
   }
+  
   .besar {
     text-align: left;
     font: Regular 14px/32px Source Sans Pro;
