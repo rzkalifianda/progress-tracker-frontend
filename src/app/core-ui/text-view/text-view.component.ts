@@ -62,7 +62,8 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
   `],
   encapsulation: ViewEncapsulation.Native
 })
-export class CustomTextViewComponent implements OnInit {
+
+export class TextViewComponent implements OnInit {
 
   @Input() text = 'Custom text view';
   @Input() classtouse = 'x';

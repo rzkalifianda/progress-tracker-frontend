@@ -223,7 +223,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } fro
   `],
   encapsulation: ViewEncapsulation.Native
 })
-export class CustomButtonComponent implements OnInit {
+export class ButtonComponent implements OnInit {
 
   @Input() text = 'Custom Button';
   @Input() classtouse = 'x';
