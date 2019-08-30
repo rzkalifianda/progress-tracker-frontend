@@ -26,32 +26,11 @@ export const MY_FORMATS = {
 
 @Component({
   selector: 'core-ui-datepicker',
-  template: `
-    <mat-form-field color="#0871CE" class="classdatepicker">
-	    <input matInput [matDatepicker]="myDatePicker" [formControl]="date" color="#0871CE">
-      <mat-datepicker-toggle matSuffix [for]="myDatePicker" color="#0871CE">
-      </mat-datepicker-toggle>
-      <mat-datepicker #myDatePicker
-        startView="multi-year"
-        (yearSelected)="chosenYearHandler($event)"
-        (monthSelected)="chosenMonthHandler($event, myDatePicker)"
-        panelClass="example-month-picker" color="#0871CE">
-      </mat-datepicker>
-    </mat-form-field>
-  `,
-  styles: [`
-  .classdatepicker {
-    text-align: left;
-    font: bold 18px/32px Source Sans Pro;
-    letter-spacing: 0;
-    color: #0871CE;
-    opacity: 1;
-    }
-  `],
+  templateUrl: './datepicker.component.html',
+  styleUrls: ['./datepicker.component.sass'],
   encapsulation: ViewEncapsulation.Native,
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
-
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
   ],
 })

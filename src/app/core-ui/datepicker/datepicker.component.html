@@ -1,0 +1,11 @@
+<mat-form-field color="#0871CE" class="classdatepicker">
+  <input matInput [matDatepicker]="myDatePicker" [formControl]="date" color="#0871CE">
+  <mat-datepicker-toggle matSuffix [for]="myDatePicker" color="#0871CE">
+  </mat-datepicker-toggle>
+  <mat-datepicker #myDatePicker
+    startView="multi-year"
+    (yearSelected)="chosenYearHandler($event)"
+    (monthSelected)="chosenMonthHandler($event, myDatePicker)"
+    panelClass="example-month-picker" color="#0871CE">
+  </mat-datepicker>
+</mat-form-field>
