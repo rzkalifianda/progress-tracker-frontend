@@ -16,6 +16,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRippleModule, MatInputModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatIconModule } from '@angular/material/icon';
+import { DropdownComponent } from './core-ui/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
     TextViewComponent,
     TextInputComponent,
     ButtonComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
