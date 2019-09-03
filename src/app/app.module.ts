@@ -17,6 +17,7 @@ import { MatRippleModule, MatInputModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatIconModule } from '@angular/material/icon';
 import { DropdownComponent } from './core-ui/dropdown/dropdown.component';
+import { LoginSceneComponent } from './pages/login-scene/login-scene.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DropdownComponent } from './core-ui/dropdown/dropdown.component';
     TextInputComponent,
     ButtonComponent,
     DatepickerComponent,
-    DropdownComponent
+    DropdownComponent,
+    LoginSceneComponent
   ],
   imports: [
     BrowserModule,
