@@ -13,11 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatRippleModule, MatInputModule } from '@angular/material';
+import { MatRippleModule, MatInputModule, MatCardModule, MatDividerModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatIconModule } from '@angular/material/icon';
 import { DropdownComponent } from './core-ui/dropdown/dropdown.component';
 import { LoginSceneComponent } from './pages/login-scene/login-scene.component';
+import { CheckBoxComponent } from './core-ui/check-box/check-box.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginSceneComponent } from './pages/login-scene/login-scene.component';
     ButtonComponent,
     DatepickerComponent,
     DropdownComponent,
-    LoginSceneComponent
+    LoginSceneComponent,
+    CheckBoxComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,9 @@ import { LoginSceneComponent } from './pages/login-scene/login-scene.component';
     MatRippleModule,
     MatMomentDateModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

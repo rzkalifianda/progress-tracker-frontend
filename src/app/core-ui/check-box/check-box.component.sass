@@ -1,0 +1,55 @@
+.cont
+  text-align: left
+  display: block
+  position: relative
+  padding-left: 35px
+  margin-bottom: 12px
+  cursor: pointer
+  font-size: 22px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  input
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    height: 0
+    width: 0
+
+.checkmark
+  position: absolute
+  left: 0
+  height: 25px
+  width: 25px
+  background-color: #eee
+
+.cont
+  &:hover input ~ .checkmark
+    background-color: #ccc
+  input:checked ~ .checkmark
+    background: #0871CE 0% 0% no-repeat padding-box
+    border-radius: 3px
+    opacity: 1
+
+.checkmark:after
+  content: ""
+  position: absolute
+  display: none
+  // background: transparent url('img/check.png') 0% 0% no-repeat padding-box
+  // border: 2px solid #FFFFFF
+  // opacity: 1
+
+.cont
+  input:checked ~ .checkmark:after
+    display: block
+  .checkmark:after
+    left: 9px
+    top: 5px
+    width: 5px
+    height: 10px
+    border: solid white
+    border-width: 0 3px 3px 0
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    transform: rotate(45deg)

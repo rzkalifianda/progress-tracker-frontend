@@ -1,0 +1,10 @@
+<div>
+  <label class="{{classtouse}}">
+    <input type="checkbox" (change)="show = !show" ng-model="show"/>
+    <span class="checkmark"></span>{{text}}
+  </label>
+
+  <div class="row container-fluid" *ngIf="show" id="divshow" >
+    <input placeholder="ganti dengan slider disini"/>
+  </div>
+</div>
