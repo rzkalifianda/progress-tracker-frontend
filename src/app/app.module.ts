@@ -19,6 +19,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { DropdownComponent } from './core-ui/dropdown/dropdown.component';
 import { LoginSceneComponent } from './pages/login-scene/login-scene.component';
 import { CheckBoxComponent } from './core-ui/check-box/check-box.component';
+import { ReportDetailComponent } from './pages/report-detail/report-detail.component';
+import { CardReportTitleComponent } from './components/card-report-title/card-report-title.component';
+import { CardReportTaskComponent } from './components/card-report-task/card-report-task.component';
+import { Group1191Component } from './svg/group1191/group1191.component';
+import { Group1192Component } from './svg/group1192/group1192.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,12 @@ import { CheckBoxComponent } from './core-ui/check-box/check-box.component';
     DatepickerComponent,
     DropdownComponent,
     LoginSceneComponent,
-    CheckBoxComponent
+    CheckBoxComponent,
+    ReportDetailComponent,
+    CardReportTitleComponent,
+    CardReportTaskComponent,
+    Group1191Component,
+    Group1192Component
   ],
   imports: [
     BrowserModule,

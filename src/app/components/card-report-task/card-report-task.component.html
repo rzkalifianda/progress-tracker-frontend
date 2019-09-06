@@ -1,0 +1,26 @@
+<mat-card *ngFor="let obj of finalData" class="cabor">
+        <div class="minmarg1">
+            <div class='beinline-left'>
+                    <svg-group1191></svg-group1191>
+            </div>
+            <div class='beinline-right'>
+                <mat-card-title>
+                    <core-ui-text-view [text]="obj.projectName" classtouse="bold"></core-ui-text-view>
+                </mat-card-title>
+            </div>
+        </div>
+        <br>
+        <div class="minmarg2">
+            <div class='beinline-left'>
+                <svg-group1192></svg-group1192>
+            </div>
+            <div class='beinline-right'>
+                <mat-card-subtitle>
+                        <core-ui-text-view [text]="obj.role" classtouse="grey"></core-ui-text-view>
+                </mat-card-subtitle>
+            </div>
+        </div>
+        <mat-card-subtitle>
+                <core-ui-text-view [text]="'Kamu sudah melakukan ' + obj.workTotal + ' pekerjaan pada project ini'" classtouse="blue"></core-ui-text-view>
+        </mat-card-subtitle>
+</mat-card>
