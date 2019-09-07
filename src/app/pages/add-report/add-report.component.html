@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="column" >
+    <components-card-report-title></components-card-report-title>
+    <br>
+    <card-add-report-dropdown [dataProjectName]="dataProjectName" [dataRoles]="dataRoles"></card-add-report-dropdown>
+    <br>
+    <card-add-report-button (click)="addProject()"></card-add-report-button>
+  </div>
+  <div class="column1">
+    <mat-divider vertical style="height:676px; position: absolute;"></mat-divider>
+  </div>
+  <div class="column2" *ngIf="showDetail">
+    <card-add-report-detail></card-add-report-detail>
+  </div>
+</div>

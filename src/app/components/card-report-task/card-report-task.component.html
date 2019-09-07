@@ -24,3 +24,14 @@
                 <core-ui-text-view [text]="'Kamu sudah melakukan ' + obj.workTotal + ' pekerjaan pada project ini'" classtouse="blue"></core-ui-text-view>
         </mat-card-subtitle>
 </mat-card>
+<mat-card *ngFor="let obj of finalData" class="cabor" [style.border-color]="toggle0 ? 'lightgrey' : 'blue'" (click)="enableDisableRule0()">
+    <mat-card-title>
+        <core-ui-text-view [text]="obj.projectName" classtouse="bold"></core-ui-text-view>
+    </mat-card-title>
+    <mat-card-subtitle>
+        <core-ui-text-view [text]="obj.role" classtouse="grey"></core-ui-text-view>
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+        <core-ui-text-view [text]="'Kamu sudah melakukan ' + obj.workTotal + ' pekerjaan pada project ini'" classtouse="blue"></core-ui-text-view>
+    </mat-card-subtitle>
+</mat-card>

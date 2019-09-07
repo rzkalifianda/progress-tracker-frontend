@@ -1,0 +1,16 @@
+<core-ui-text-view text="Dinas Kesehatan" classtouse="bold"></core-ui-text-view>
+<core-ui-text-view text="UI/UX Designer" classtouse="grey"></core-ui-text-view>
+
+<div fxLayout="row">
+  <div fxFlex="48">
+    <card-add-report-task></card-add-report-task>
+    <br>
+    <card-add-report-button (click)="addMoreClicked()"></card-add-report-button>
+  </div>
+  <div fxFlex="4">
+
+  </div>
+  <div fxFlex="48" *ngIf="addMore">
+    <card-add-report-task></card-add-report-task>
+  </div>
+</div>
