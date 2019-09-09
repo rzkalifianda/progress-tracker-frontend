@@ -28,15 +28,4 @@ export class CardAddReportDropdownComponent implements OnInit {
     this.dataProjectNameFinal = this.dataProjectName;
     this.dataRolesFinal = this.dataRoles;
   }
-
-  selectProjectName() {
-    console.log("project name", this.projectName);
-    this.appService.setSelectedProjectName = this.projectName;
-    console.log(this.appService.getSelectedProjectName);
-  }
-
-  selectRolesName() {
-    this.appService.setSelectedRolesName = this.rolesName;
-    console.log(this.appService.getSelectedRolesName);
-  }
 }

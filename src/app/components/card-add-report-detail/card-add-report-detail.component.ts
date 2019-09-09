@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AppService } from './../../app.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'card-add-report-detail',
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardAddReportDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private appService: AppService,
+    private activatedRoutes: ActivatedRoute,
+    private router: Router,
+    ) { }
 
   addMore = false;
+  @Input() projectName = '';
+  @Input() rolesName = '';
 
   ngOnInit() {
+    this.projectName = this.appService.getSelectedProjectName();
+    this.rolesName = this.appService.getSelectedRolesName();
   }
 
   addMoreClicked(){

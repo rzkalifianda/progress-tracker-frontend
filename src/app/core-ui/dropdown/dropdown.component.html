@@ -1,5 +1,5 @@
 <div>
-  <select>
-    <option  *ngFor="let data of result">{{data.dataDropdown}} </option>
+  <select (change)="selected()" [(ngModel)]="selectedData">
+    <option *ngFor="let data of result">{{data.dataDropdown}} </option>
   </select>
 </div>

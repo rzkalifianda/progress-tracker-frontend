@@ -1,5 +1,5 @@
 <mat-card class="cabor" >
-  <core-ui-dropdown [data]="dataProjectNameFinal" (change)="selectProjectName()" [(ngModel)]="projectName"></core-ui-dropdown>
+  <core-ui-dropdown [data]="dataProjectNameFinal" function="selectProjectName"></core-ui-dropdown>
   <br>
-  <core-ui-dropdown [data]="dataRolesFinal"  (change)="selectRolesName()" [(ngModel)]="rolesName"></core-ui-dropdown>
+  <core-ui-dropdown [data]="dataRolesFinal" function="selectRolesName"></core-ui-dropdown>
 </mat-card>

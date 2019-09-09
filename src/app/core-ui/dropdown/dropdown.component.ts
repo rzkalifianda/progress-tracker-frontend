@@ -14,6 +14,8 @@ export class DropdownComponent implements OnInit {
   @Input() placeholder = '';
   @Output() result : any;
 
+  @Input() function: any;
+
   selectedData;
 
   constructor(
@@ -24,9 +26,17 @@ export class DropdownComponent implements OnInit {
 
   ngOnInit() {
     this.result = this.data;
+    // this.function();
   }
 
   selected(){
-    console.log(this.selectedData);
+    if(this.function == "selectProjectName")
+    {
+      this.appService.setSelectedProjectName(this.selectedData);
+    }
+    else if (this.function == "selectRolesName")
+    {
+      this.appService.setSelectedRolesName(this.selectedData);
+    }
   }
 }
