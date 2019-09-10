@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatRippleModule, MatInputModule, MatCardModule, MatDividerModule } from '@angular/material';
+import { MatRippleModule, MatInputModule, MatCardModule, MatDividerModule, MatExpansionModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatIconModule } from '@angular/material/icon';
 import { DropdownComponent } from './core-ui/dropdown/dropdown.component';
@@ -30,6 +30,8 @@ import { CardAddReportButtonComponent } from './components/card-add-report-butto
 import { CardAddReportDetailComponent } from './components/card-add-report-detail/card-add-report-detail.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CardAddReportTaskComponent } from './components/card-add-report-task/card-add-report-task.component';
+import { ExpansionTileComponent } from './core-ui/expansion-tile/expansion-tile.component';
+import {MatListModule} from '@angular/material/list';
 
 import { CardComponent } from './components/card/card.component';
 import { HomeReportComponent } from './pages/home-report/home-report.component';
@@ -59,7 +61,8 @@ import { HomeReportComponent } from './pages/home-report/home-report.component';
     CardAddReportDetailComponent,
     CardAddReportTaskComponent,
     CardComponent,
-    HomeReportComponent
+    HomeReportComponent,
+    ExpansionTileComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,9 @@ import { HomeReportComponent } from './pages/home-report/home-report.component';
     MatIconModule,
     MatCardModule,
     MatDividerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatExpansionModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
