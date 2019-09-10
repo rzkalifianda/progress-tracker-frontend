@@ -9,8 +9,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } fro
 export class ButtonComponent implements OnInit {
 
   @Input() text = 'Custom Button';
-  @Input() classtouse = 'x';
-  @Output() countChanged = new EventEmitter<number>();
+  @Input() classtouse = '';
   private totalClicks: number = 0;
 
   constructor() { }

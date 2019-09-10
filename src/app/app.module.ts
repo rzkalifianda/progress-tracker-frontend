@@ -31,6 +31,9 @@ import { CardAddReportDetailComponent } from './components/card-add-report-detai
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CardAddReportTaskComponent } from './components/card-add-report-task/card-add-report-task.component';
 
+import { CardComponent } from './components/card/card.component';
+import { HomeReportComponent } from './pages/home-report/home-report.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +58,8 @@ import { CardAddReportTaskComponent } from './components/card-add-report-task/ca
     CardAddReportButtonComponent,
     CardAddReportDetailComponent,
     CardAddReportTaskComponent,
+    CardComponent,
+    HomeReportComponent
   ],
   imports: [
     BrowserModule,
