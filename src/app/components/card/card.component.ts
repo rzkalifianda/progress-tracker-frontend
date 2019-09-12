@@ -13,7 +13,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit() {
     const asd = 'lasglsalasl';
-    console.log(this.data[0]);
 
 
     // let a,b,c,d,e;

@@ -1,7 +1,6 @@
 import { AppService } from './../../app.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ComponentFactoryResolver } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
 @Component({
   selector: 'card-add-report-detail',
   templateUrl: './card-add-report-detail.component.html',
@@ -13,6 +12,7 @@ export class CardAddReportDetailComponent implements OnInit {
     private appService: AppService,
     private activatedRoutes: ActivatedRoute,
     private router: Router,
+    private _translateService: AppService,
     ) { }
 
   addMore = false;
@@ -20,6 +20,16 @@ export class CardAddReportDetailComponent implements OnInit {
   @Input() rolesName = '';
 
   ngOnInit() {
+    this._translateService.projectName.subscribe(
+      () => {
+        this.projectName = this.appService.getSelectedProjectName();
+      }
+    );
+    this._translateService.rolesName.subscribe(
+      () => {
+        this.rolesName = this.appService.getSelectedRolesName();
+      }
+    );
     this.projectName = this.appService.getSelectedProjectName();
     this.rolesName = this.appService.getSelectedRolesName();
   }
@@ -27,5 +37,4 @@ export class CardAddReportDetailComponent implements OnInit {
   addMoreClicked(){
     this.addMore = !this.addMore;
   }
-
 }

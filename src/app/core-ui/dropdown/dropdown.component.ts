@@ -12,9 +12,10 @@ declare var angular: any;
 export class DropdownComponent implements OnInit {
   @Input() data: any;
   @Input() placeholder = '';
-  @Output() result : any;
+  @Input() classtouse = '';
 
   @Input() function: any;
+  @Output() result : any;
 
   selectedData;
 
@@ -30,11 +31,11 @@ export class DropdownComponent implements OnInit {
   }
 
   selected(){
-    if(this.function == "selectProjectName")
+    if(this.function === "selectProjectName")
     {
       this.appService.setSelectedProjectName(this.selectedData);
     }
-    else if (this.function == "selectRolesName")
+    else if (this.function === "selectRolesName")
     {
       this.appService.setSelectedRolesName(this.selectedData);
     }

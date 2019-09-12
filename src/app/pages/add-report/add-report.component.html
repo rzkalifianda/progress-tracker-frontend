@@ -3,6 +3,9 @@
     <components-card-report-title></components-card-report-title>
     <br>
     <card-add-report-dropdown [dataProjectName]="dataProjectName" [dataRoles]="dataRoles"></card-add-report-dropdown>
+    <div>
+      <ng-template #viewContainerRef></ng-template>
+    </div>
     <br>
     <card-add-report-button (click)="addProject()"></card-add-report-button>
   </div>
@@ -12,4 +15,8 @@
   <div class="column2" *ngIf="showDetail">
     <card-add-report-detail></card-add-report-detail>
   </div>
+</div>
+
+<div class="bottom-fix">
+  <core-ui-button text="Submit Report" classtouse="btn-free-save"></core-ui-button>
 </div>

@@ -1,5 +1,15 @@
-<div>
-  <select (change)="selected()" [(ngModel)]="selectedData">
+<div class="{{classtouse}}">
+  <select (change)="selected()" [(ngModel)]="selectedData" >
+    <option [ngValue]="undefined" hidden>{{placeholder}}</option>
     <option *ngFor="let data of result">{{data.dataDropdown}} </option>
   </select>
 </div>
+<!-- 
+<mat-form-field class={{classtouse}}>
+  <mat-label>{{placeholder}}</mat-label>
+  <mat-select (selectionChange)="selected()" [(ngModel)]="selectedData">
+    <mat-option *ngFor="let data of result">
+      {{data.dataDropdown}} 
+    </mat-option>
+  </mat-select>
+</mat-form-field> -->

@@ -1,5 +1,15 @@
 <mat-card class="cabor" >
-  <core-ui-dropdown [data]="dataProjectNameFinal" function="selectProjectName"></core-ui-dropdown>
+  <core-ui-dropdown 
+    [data]="dataProjectNameFinal" 
+    function="selectProjectName" 
+    placeholder="Project yang kamu kerjain apa?"
+    classtouse="default">
+  </core-ui-dropdown>
   <br>
-  <core-ui-dropdown [data]="dataRolesFinal" function="selectRolesName"></core-ui-dropdown>
+  <core-ui-dropdown
+  [data]="dataRolesFinal" 
+  function="selectRolesName" 
+  placeholder="Kamu jadi apa di project ini?"
+  classtouse="default">
+</core-ui-dropdown>
 </mat-card>

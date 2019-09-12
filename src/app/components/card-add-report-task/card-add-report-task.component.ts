@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardAddReportTaskComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
   }

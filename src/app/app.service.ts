@@ -1,9 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
+
+  @Output() projectName:EventEmitter <any> = new EventEmitter();
+  @Output() rolesName:EventEmitter <any> = new EventEmitter();
 
   private dummyProjectName =
   {
@@ -54,6 +57,7 @@ export class AppService {
 
   setSelectedProjectName(selectedProjectName: string){
     this.dummyProjectName.selected = selectedProjectName;
+    this.projectName.emit();
   }
 
   getSelectedRolesName() {
@@ -62,6 +66,7 @@ export class AppService {
 
   setSelectedRolesName(selectedRolesName: string){
     this.dummyRoles.selected = selectedRolesName;
+    this.rolesName.emit(selectedRolesName);
   }
 
   constructor() { }

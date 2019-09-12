@@ -1,7 +1,87 @@
-<page-home-report></page-home-report>
-<br><br><br><br><br><br><br><br><br><br>
+<add-report [dataProjectName] = "dummyProjectName" [dataRoles] = "dummyRoles"></add-report>
 
-<!-- <app-login-scene></app-login-scene> -->
-<pages-report-detail [dataDummy]="dummyCardReportTask"></pages-report-detail>
+<!-- <div>
+  <h1>
+    Welcome to Our Custom Text View
+  </h1>
+  <core-ui-text-view text="Halo, Default" classtouse="default"></core-ui-text-view>
+  <core-ui-text-view text="Laporan; class=title" classtouse="title"></core-ui-text-view>
+  <core-ui-text-view text="Kamis, 27 November 2019; class=subtitle" classtouse="subtitle"></core-ui-text-view>
+  <core-ui-text-view text="Kamu dan Kamu; class=bold" classtouse="bold"></core-ui-text-view>
+  <core-ui-text-view text="Kamu Belum Melakukan Traksaksi Apa Apa; class=grey" classtouse="grey"></core-ui-text-view>
+  <core-ui-text-view text="Ada Project Lainnya Lagi Nih; class=blue" classtouse="blue"></core-ui-text-view>
+  <core-ui-text-view text="Jangan dulu deh; class=red" classtouse="red"></core-ui-text-view>
 
+  <core-ui-text-input text="Project yang kamu kerjain apa?" classtouse="grey"></core-ui-text-input><br><br>
+  <core-ui-text-input text="Project yang kamu kerjain apa?" classtouse="projek"></core-ui-text-input><br><br>
+  <core-ui-text-input text="Apa yang kamu kerjain?" classtouse="kecil"></core-ui-text-input><br><br>
+  <core-ui-text-input text="Ceritain dong kaya gimana..." classtouse="besar"></core-ui-text-input><br><br>
+  <core-ui-text-input text="Username" classtouse="user"></core-ui-text-input><br><br>
+  <core-ui-text-input text="Username" classtouse="biru"></core-ui-text-input><br><br>
+  <core-ui-text-input text="Username" classtouse="merah"></core-ui-text-input><br><br>
+
+</div>
+<div style="text-align:center">
+  <h1>
+    Welcome to Our Custom Text View
+  </h1>
+  <core-ui-text-view text="Halo, Default" classtouse="default"></core-ui-text-view>
+  <core-ui-text-view text="Laporan; class=title" classtouse="title"></core-ui-text-view>
+  <core-ui-text-view text="Kamis, 27 November 2019; class=subtitle" classtouse="subtitle"></core-ui-text-view>
+  <core-ui-text-view text="Kamu dan Kamu; class=bold" classtouse="bold"></core-ui-text-view>
+  <core-ui-text-view text="Kamu Belum Melakukan Traksaksi Apa Apa; class=grey" classtouse="grey"></core-ui-text-view>
+  <core-ui-text-view text="Ada Project Lainnya Lagi Nih; class=blue" classtouse="blue"></core-ui-text-view>
+  <core-ui-text-view text="Jangan dulu deh; class=red" classtouse="red"></core-ui-text-view>
+
+
+  <h1>ADMIN</h1>
+  <core-ui-button text="Masuk" classtouse="btn-blue btn-home-new" onclick='(function(){alert(); })();' >
+
+  </core-ui-button>
+
+
+  <br><br>
+  <h1>USER</h1>
+  <core-ui-button text="+ Ada project lainnya lagi nih" classtouse="btn-blue btn-incard-reportadd" function="keluar"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Edit laporan" classtouse="btn-blue btn-free-reportadd"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Simpan laporan" classtouse="btn-green btn-reportsave"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Jangan dulu deh" classtouse="btn-red btn-popupcancel"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Ya, simpan laporan" classtouse="btn-green btn-popupconfirm"></core-ui-button>
+  <br><br>
+  <core-ui-button text="➕ Lapor progres kamu" classtouse="btn-home-new"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Aku kemarin sakit/cuti nih" classtouse="btn-blue btn-incard-homeconfirm"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Isi Laporan" classtouse="btn-red btn-incard-homecancel"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Lihat lebih banyak" classtouse="btn-blue btn-free-homelittle"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Gajadi hapus deh" classtouse="btn-green btn-popup-deletecancel"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Hapus aja gapapa" classtouse="btn-red btn-popup-deleteconfirm"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Kumpul laporan" classtouse="btn-red btn-free-addreportrole"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Sip masama" classtouse="btn-green btn-popup-confirmthanks"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Simpan" classtouse="btn-free-save"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Lihat isinya dong" classtouse="btn-blue btn-incard-homeconfirm"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Aku kemarin sakit/cuti nih" classtouse="btn-tosca btn-incard-homeconfirm"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Lihat lebih banyak" classtouse="btn-tosca btn-free-homelittle"></core-ui-button>
+  <br><br>
+  <core-ui-button text="Ada 2 hari 7yang belum kamu isi nih!" classtouse="btn-alert-yellow"></core-ui-button>
+  <core-ui-dropdown [data]="['a','b','c']"></core-ui-dropdown>
+
+  <br><br>
+  <h1>Check-Box</h1>
+  <core-ui-check-box text="Ada progressnya nih" classtouse="cont"></core-ui-check-box>
+</div>
+<router-outlet></router-outlet> -->
 <router-outlet></router-outlet>
