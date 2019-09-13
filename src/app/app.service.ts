@@ -4,8 +4,10 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
   providedIn: 'root'
 })
 export class AppService {
-  @Output() projectName: EventEmitter <any> = new EventEmitter();
-  @Output() rolesName: EventEmitter <any> = new EventEmitter();
+
+  @Output() projectName:EventEmitter <any> = new EventEmitter();
+  @Output() rolesName:EventEmitter <any> = new EventEmitter();
+  @Output() mainDashboardName:EventEmitter <any> = new EventEmitter();
 
   private dummyProjectName =
   {
@@ -42,12 +44,32 @@ export class AppService {
     selected: ''
   };
 
+  private dummyMainDashboardName =
+  {
+    data: [
+      {
+        dataDropdown : 'Project',
+      },
+      {
+        dataDropdown : 'User',
+      },
+      {
+        dataDropdown : 'Role',
+      }
+    ],
+    selected: ''
+  };
+
   getDropdownProjectName() {
     return this.dummyProjectName;
   }
 
   getDropdownRolesName() {
     return this.dummyRoles;
+  }
+
+  getDropdownMainDashboard() {
+    return this.dummyMainDashboardName;
   }
 
   getSelectedProjectName() {
@@ -66,6 +88,15 @@ export class AppService {
   setSelectedRolesName(selectedRolesName: string){
     this.dummyRoles.selected = selectedRolesName;
     this.rolesName.emit(selectedRolesName);
+  }
+
+  getSelectedMainDashboardName() {
+    return this.dummyMainDashboardName.selected;
+  }
+
+  setSelectedMainDashboardName(selectedMainDashboardName: string){
+    this.dummyMainDashboardName.selected = selectedMainDashboardName;
+    this.mainDashboardName.emit(selectedMainDashboardName);
   }
 
   constructor() { }

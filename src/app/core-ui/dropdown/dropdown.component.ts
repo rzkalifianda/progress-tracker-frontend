@@ -1,6 +1,6 @@
 import { AppService } from './../../app.service';
-import { Component,Input, OnInit, ViewEncapsulation, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 declare var angular: any;
 
 @Component({
@@ -27,7 +27,7 @@ export class DropdownComponent implements OnInit {
 
   ngOnInit() {
     this.result = this.data;
-    // this.function();
+
   }
 
   selected(){
@@ -38,6 +38,9 @@ export class DropdownComponent implements OnInit {
     else if (this.function === "selectRolesName")
     {
       this.appService.setSelectedRolesName(this.selectedData);
+    }else if (this.function === "selectMainDashboardName")
+    {
+      this.appService.setSelectedMainDashboardName(this.selectedData);
     }
   }
 }

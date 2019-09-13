@@ -570,6 +570,18 @@ export class AppComponent {
     }
   ];
 
+  @Output() dummyMainDashboard = [
+    {
+      dataDropdown : 'Project',
+    },
+    {
+      dataDropdown : 'Role',
+    },
+    {
+      dataDropdown : 'User',
+    }
+  ];
+
   date = new FormControl(moment());
   month: string[];
 

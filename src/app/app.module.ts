@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TextViewComponent } from './core-ui/text-view/text-view.component';
@@ -36,6 +35,7 @@ import { CardComponent } from './components/card/card.component';
 import { HomeReportComponent } from './pages/home-report/home-report.component';
 import { Group1172Component } from './svg/group1172/group1172.component';
 import { AdminReportDetailComponent } from './pages/admin/report-detail/report-detail.component';
+import { MainDashboardComponent } from './pages/admin/main-dashboard/main-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +61,8 @@ import { AdminReportDetailComponent } from './pages/admin/report-detail/report-d
     HomeReportComponent,
     ExpansionTileComponent,
     AdminReportDetailComponent,
-    Group1172Component
+    Group1172Component,
+    MainDashboardComponent
   ],
   exports: [
     // CardAddReportTaskComponent,
