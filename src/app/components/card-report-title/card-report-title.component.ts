@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'components-card-report-title',
+  selector: 'component-card-report-title',
   templateUrl: './card-report-title.component.html',
   styleUrls: ['./card-report-title.component.sass']
 })

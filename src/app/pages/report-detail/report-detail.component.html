@@ -1,8 +1,15 @@
 <div class="row">
     <div class="column" >
-        <components-card-report-title></components-card-report-title>
+        <mat-card class="cabor">
+            <mat-card-title>
+                <core-ui-text-view text="Laporan" classtouse="title"></core-ui-text-view>
+            </mat-card-title>
+            <mat-card-subtitle>
+                <core-ui-text-view text="Rabu, 26 November 2019" classtouse="subtitle"></core-ui-text-view>
+            </mat-card-subtitle>
+        </mat-card>
         <br>
-        <components-card-report-task [data]="dataDummy"></components-card-report-task>
+        <!-- <components-card-report-task [data]="dataDummy"></components-card-report-task> -->
         <core-ui-button text="Edit laporan" classtouse="btn-blue btn-free-reportadd"></core-ui-button>
     </div>
     <div class="column1">

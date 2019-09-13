@@ -13,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatRippleModule, MatInputModule, MatCardModule, MatDividerModule, MatExpansionModule, MatSelectModule } from '@angular/material';
+import { MatRippleModule, MatInputModule, MatCardModule, MatDividerModule,
+  MatExpansionModule, MatSelectModule, MatSidenavModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatIconModule } from '@angular/material/icon';
 import { DropdownComponent } from './core-ui/dropdown/dropdown.component';
@@ -21,8 +22,7 @@ import { LoginSceneComponent } from './pages/login-scene/login-scene.component';
 import { CheckBoxComponent } from './core-ui/check-box/check-box.component';
 import { Group1191Component } from './svg/group1191/group1191.component';
 import { Group1192Component } from './svg/group1192/group1192.component';
-import { ReportDetailComponent } from './pages/report-detail/report-detail.component';
-import { CardReportTaskComponent } from './components/card-report-task/card-report-task.component';
+import { UserReportDetailComponent } from './pages/report-detail/report-detail.component';
 import { CardReportTitleComponent } from './components/card-report-title/card-report-title.component';
 import { AddReportComponent } from './pages/add-report/add-report.component';
 import { CardAddReportDropdownComponent } from './components/card-add-report-dropdown/card-add-report-dropdown.component';
@@ -32,9 +32,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CardAddReportTaskComponent } from './components/card-add-report-task/card-add-report-task.component';
 import { ExpansionTileComponent } from './core-ui/expansion-tile/expansion-tile.component';
 import {MatListModule} from '@angular/material/list';
-
 import { CardComponent } from './components/card/card.component';
 import { HomeReportComponent } from './pages/home-report/home-report.component';
+import { Group1172Component } from './svg/group1172/group1172.component';
+import { AdminReportDetailComponent } from './pages/admin/report-detail/report-detail.component';
 
 @NgModule({
   declarations: [
@@ -46,15 +47,11 @@ import { HomeReportComponent } from './pages/home-report/home-report.component';
     DropdownComponent,
     LoginSceneComponent,
     CheckBoxComponent,
-    ReportDetailComponent,
+    UserReportDetailComponent,
     CardReportTitleComponent,
-    CardReportTaskComponent,
     Group1191Component,
     Group1192Component,
     DatepickerComponent,
-    CardReportTaskComponent,
-    ReportDetailComponent,
-    CardReportTitleComponent,
     AddReportComponent,
     CardAddReportDropdownComponent,
     CardAddReportButtonComponent,
@@ -63,13 +60,15 @@ import { HomeReportComponent } from './pages/home-report/home-report.component';
     CardComponent,
     HomeReportComponent,
     ExpansionTileComponent,
+    AdminReportDetailComponent,
+    Group1172Component
   ],
   exports: [
     // CardAddReportTaskComponent,
   ],
   entryComponents:
   [
-    CardAddReportDropdownComponent,
+    CardAddReportDropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -91,9 +90,10 @@ import { HomeReportComponent } from './pages/home-report/home-report.component';
     MatExpansionModule,
     MatListModule,
     MatSelectModule,
+    MatSidenavModule
   ],
   providers: [
-    
+
   ],
   bootstrap: [AppComponent]
 })
