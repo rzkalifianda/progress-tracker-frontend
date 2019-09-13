@@ -5,11 +5,16 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./report-detail.component.sass']
 })
 export class UserReportDetailComponent implements OnInit {
-  @Input() dummyReportDetail = '';
+  @Input() dataDummy: any;
+  selectedData: any;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  change(data) {
+    this.selectedData = [data];
   }
 
 }
