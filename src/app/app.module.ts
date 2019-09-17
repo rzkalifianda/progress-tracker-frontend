@@ -36,6 +36,7 @@ import { HomeReportComponent } from './pages/home-report/home-report.component';
 import { Group1172Component } from './svg/group1172/group1172.component';
 import { AdminReportDetailComponent } from './pages/admin/report-detail/report-detail.component';
 import { MainDashboardComponent } from './pages/admin/main-dashboard/main-dashboard.component';
+import { MainDashboardTimeComponent } from './pages/admin/main-dashboard-time/main-dashboard-time.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { MainDashboardComponent } from './pages/admin/main-dashboard/main-dashbo
     ExpansionTileComponent,
     AdminReportDetailComponent,
     Group1172Component,
-    MainDashboardComponent
+    MainDashboardComponent,
+    MainDashboardTimeComponent
   ],
   exports: [
     // CardAddReportTaskComponent,
