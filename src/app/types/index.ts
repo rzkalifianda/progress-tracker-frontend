@@ -3,3 +3,4 @@ export type Timeline={
     otherProjects: string;
     projects: string[];
 }
+
