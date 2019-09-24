@@ -1,19 +1,19 @@
-<body id="loginAdmin">
-    <section>
-      <div class= "login-admin-center">
-        <form class="loginForm" method="POST" >
-          <img class="logocodify" src="../../../../assets/Codify_Logo_Black.png">
-          <core-ui-text-view text="Halo,Admin!" classtouse="bold" class="subtitle-login"></core-ui-text-view>
-            <div class="form-group" fxLayout="row" fxLayoutAlign="center">
-              <core-ui-text-input text="Username" classtouse="admin"></core-ui-text-input><br><br>
-            </div>/
-            <div class="form-group" fxLayout="row" fxLayoutAlign="center">
-              <core-ui-text-input text="Password" classtouse="admin" ></core-ui-text-input><br><br>
-            </div>
-            <div class="form-group">
-              <core-ui-button text="Masuk" classtouse="btn-blue btn-login" onclick='(function(){alert(); })();' style="margin-left: 494px;"></core-ui-button>
-            </div>
-        </form>
+<section id="loginAdmin">
+  <div class= "login-admin-center">
+    <form class="loginForm" method="POST" >
+      <img class="logocodify" src="../../../../assets/Codify_Logo_Black.png">
+      <div style="margin-left:23px">
+        <core-ui-text-view text="Halo,Admin!" classtouse="bold" class="title-login-admin"></core-ui-text-view>
       </div>
-    </section>
-  </body>
+        <div class="form-group" fxLayout="row" fxLayoutAlign="center">
+          <core-ui-text-input text="Username" classtouse="admin"></core-ui-text-input><br><br>
+        </div><br>
+        <div class="form-group" fxLayout="row" fxLayoutAlign="center">
+          <core-ui-text-input text="Password" classtouse="admin" ></core-ui-text-input><br><br>
+        </div><br>
+        <div class="form-group">
+          <core-ui-button text="Masuk" classtouse="btn-blue btn-login" onclick='(function(){alert(); })();' style="margin-left: 100px;"></core-ui-button>
+        </div>
+    </form>
+  </div>
+</section>
