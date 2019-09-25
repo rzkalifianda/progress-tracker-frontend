@@ -1,31 +1,43 @@
-<body>
-<section id="mainDashboard">
-            <div id="top">
-                    <core-ui-dropdown
-                        [data]="dataMainDashboardFinal"
-                        function="selectMainDashboardName"
-                        placeholder="Pilih"
-                        classtouse="bluewhite"
-                        style="position: absolute; top: 15px;
-                        left: 40px;">
-                    </core-ui-dropdown>
-                <core-ui-button text="Export csv" classtouse="btn-tosca btn-free-homelittle" class="export"></core-ui-button>
-                <core-ui-button text="➕ Tambah Role" classtouse="btn-home-new"></core-ui-button>
+<div class="top">
+    <div class="beinline-left">
+        <core-ui-dropdown
+            [data]="dataMainDashboardFinal" function="selectMainDashboardName"
+            placeholder="Project" classtouse="bluewhite"
+            style="position: absolute; top: 15px; left: 40px;">
+        </core-ui-dropdown>
+        <form (submit)="onSubmit(search.value)" class="placer" >
+            <input type="text" #search placeholder="Cari project" onfocus="this.value=''" >
+        </form>
+
+
+    </div>
+    <div class="beinline-right">
+        <core-ui-button text="Export csv" classtouse="btn-tosca btn-free-homelittle"></core-ui-button>&nbsp;&nbsp;
+        <core-ui-button text="➕ Tambah Role" classtouse="btn-home-new"></core-ui-button>
+    </div>
+</div>
+
+<div class="kiddie">
+    <div *ngIf="showDetailProject">
+        <div *ngFor="let obj of dataMainDashboard[0].detail">
+            <div class="dropdown bondro1">
+                <core-ui-expansion-tile [text]="obj.name"></core-ui-expansion-tile>
             </div>
-            <div class="dropdown">
-                <core-ui-expansion-tile></core-ui-expansion-tile>
+        </div>
+    </div>
+    <div *ngIf="showDetailRole">
+        <div *ngFor="let obj of dataMainDashboard[1].detail">
+            <div class="dropdown bondro1">
+                <core-ui-expansion-tile [text]="obj.name"></core-ui-expansion-tile>
             </div>
-            <div class="dropdown">
-                <core-ui-expansion-tile></core-ui-expansion-tile>
+        </div>
+    </div>
+    <div *ngIf="showDetailUser">
+        <div *ngFor="let obj of dataMainDashboard[2].detail">
+            <div class="dropdown bondro2">
+                <core-ui-expansion-tile [text]="obj.name"></core-ui-expansion-tile>
             </div>
-            <div class="dropdown">
-                <core-ui-expansion-tile></core-ui-expansion-tile>
-            </div>
-            <div class="dropdown">
-                <core-ui-expansion-tile></core-ui-expansion-tile>
-            </div>
-            <div class="dropdown">
-                <core-ui-expansion-tile></core-ui-expansion-tile>
-            </div>
-    </section>
-</body>
+        </div>
+    </div>
+</div>
+

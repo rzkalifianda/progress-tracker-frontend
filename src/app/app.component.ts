@@ -571,16 +571,36 @@ export class AppComponent {
   ];
 
   @Output() dummyMainDashboard = [
-    {
-      dataDropdown : 'Project',
-    },
-    {
-      dataDropdown : 'Role',
-    },
-    {
-      dataDropdown : 'User',
-    }
-  ];
+   {
+     dataDropdown : 'Project',
+     detail: [
+         {name: 'Dinas Kesehatan'},
+         {name: 'MacroAd'},
+         {name: 'Sistem Tematik'}
+     ]
+   },
+   {
+     dataDropdown : 'Role',
+     detail: [
+         {name: 'Back End Engineer'},
+         {name: 'Front End Engineer'},
+         {name: 'Project Manager'},
+         {name: 'QA Analyst'},
+         {name: 'UI / UX Designer'}
+     ]
+   },
+   {
+     dataDropdown : 'User',
+     detail: [
+         {name: 'Karel'},
+         {name: 'Fian'},
+         {name: 'Sherly'},
+         {name: 'Febry'},
+         {name: 'Daniel'},
+         {name: 'Rezkhi'}
+     ]
+   }
+ ];
 
 
   date = new FormControl(moment());

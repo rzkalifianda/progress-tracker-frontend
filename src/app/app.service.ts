@@ -49,12 +49,32 @@ export class AppService {
     data: [
       {
         dataDropdown : 'Project',
-      },
-      {
-        dataDropdown : 'User',
+        detail: [
+            {name: 'Dinas Kesehatan'},
+            {name: 'MacroAd'},
+            {name: 'Sistem Tematik'}
+        ]
       },
       {
         dataDropdown : 'Role',
+        detail: [
+            {name: 'Back End Engineer'},
+            {name: 'Front End Engineer'},
+            {name: 'Project Manager'},
+            {name: 'QA Analyst'},
+            {name: 'UI / UX Designer'}
+        ]
+      },
+      {
+        dataDropdown : 'User',
+        detail: [
+            {name: 'Karel'},
+            {name: 'Fian'},
+            {name: 'Sherly'},
+            {name: 'Febry'},
+            {name: 'Daniel'},
+            {name: 'Rezkhi'}
+        ]
       }
     ],
     selected: ''
@@ -145,7 +165,7 @@ export class AppService {
                {
                   projectName: 'DLL',
                   roleName: 'Role Lain',
-                  task: 
+                  task:
                   [
                      {
                         taskName: 'Desain Dashboard Element',
@@ -164,7 +184,7 @@ export class AppService {
                {
                   projectName: 'DLL',
                   roleName: 'Role Lain',
-                  task: 
+                  task:
                   [
                      {
                         taskName: 'Desain Dashboard Element',
@@ -250,7 +270,7 @@ export class AppService {
                {
                   projectName: 'DLL',
                   roleName: 'Role Lain',
-                  task: 
+                  task:
                   [
                      {
                         taskName: 'Desain Dashboard Element',
@@ -269,7 +289,7 @@ export class AppService {
                {
                   projectName: 'DLL',
                   roleName: 'Role Lain',
-                  task: 
+                  task:
                   [
                      {
                         taskName: 'Desain Dashboard Element',
@@ -294,7 +314,7 @@ export class AppService {
   getHomeData(){
     return this.homeData;
   }
-  
+
   getDropdownProjectName() {
     return this.dummyProjectName;
   }

@@ -1,16 +1,23 @@
 <mat-expansion-panel class="default">
-        <mat-expansion-panel-header>
+    <mat-expansion-panel-header>
         <mat-panel-title>
-            <b>Role</b>
+            <div *ngIf="showProject"><svg-group1191></svg-group1191></div>
+            <div *ngIf="showReport"><svg-group1172></svg-group1172></div>
+            <div *ngIf="showUser"><svg-group1286></svg-group1286></div>
+             &nbsp;&nbsp;
+            <b>{{text}}</b>
         </mat-panel-title>
-        </mat-expansion-panel-header>
+    </mat-expansion-panel-header>
 
-        <mat-action-list>
-                <mat-divider></mat-divider>
+    <mat-action-list class="fontsize">
+        <div *ngIf="showLihatDetailRole">
+            <mat-divider></mat-divider>
             <button mat-list-item> Lihat Detail Role </button>
-                <mat-divider></mat-divider>
-            <button mat-list-item> Edit Role </button>
-                <mat-divider></mat-divider>
-            <button mat-list-item> Delete Role </button>
-        </mat-action-list>
+        </div>
+        <mat-divider></mat-divider>
+        <button mat-list-item> Edit Role </button>
+        <mat-divider></mat-divider>
+        <button mat-list-item> Delete Role </button>
+    </mat-action-list>
 </mat-expansion-panel>
+
