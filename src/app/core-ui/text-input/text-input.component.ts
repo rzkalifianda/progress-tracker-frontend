@@ -10,6 +10,7 @@ export class TextInputComponent implements OnInit {
 
   @Input() text = '';
   @Input() classtouse = 'x';
+  @Input() type = '';
 
   constructor() { }
 

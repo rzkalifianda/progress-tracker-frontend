@@ -38,6 +38,7 @@ import { AdminReportDetailComponent } from './pages/admin/report-detail/report-d
 import { MainDashboardComponent } from './pages/admin/main-dashboard/main-dashboard.component';
 import { MainDashboardTimeComponent } from './pages/admin/main-dashboard-time/main-dashboard-time.component';
 import { Group1286Component } from './svg/group1286/group1286.component';
+import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component'; 
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { Group1286Component } from './svg/group1286/group1286.component';
     Group1172Component,
     MainDashboardComponent,
     MainDashboardTimeComponent,
-    Group1286Component
+    Group1286Component,
+    LoginAdminComponent
   ],
   exports: [
     // CardAddReportTaskComponent,
