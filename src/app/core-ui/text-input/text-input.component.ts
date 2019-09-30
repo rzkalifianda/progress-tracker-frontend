@@ -9,6 +9,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter} from
 export class TextInputComponent implements OnInit {
 
   @Input() text = '';
+  @Input() defaultValue = '';
   @Input() classtouse = 'x';
   @Input() type = '';
 
