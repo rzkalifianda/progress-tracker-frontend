@@ -3,7 +3,7 @@
         class="home-report-card home-new-report card"
         style="display:flex; justify-content:center; align-items:center;"
         >
-        <core-ui-button text="➕ Lapor progres kamu" classtouse="btn-home-new btn-add"></core-ui-button>
+        <core-ui-button text="➕ Lapor progres kamu" classtouse="btn-home-new btn-add" (click)="addReport()"></core-ui-button>
     </mat-card>
     <div class="container" *ngFor = "let data of dataHome.data">
         <mat-card class = "cardHome">
@@ -52,7 +52,7 @@
                     text = "+ {{dataHome.data[0].division.length - 2}} project lainnya" 
                     classtouse = "bold">
                 </core-ui-text-view>
-                <core-ui-button text="Lihat isinya dong" classtouse="btn-blue btn-incard-homeconfirm"></core-ui-button>
+                <core-ui-button text="Lihat isinya dong" classtouse="btn-blue btn-incard-homeconfirm" (click)="reportDetail()"></core-ui-button>
             </mat-card-content>
         </mat-card>
     </div>

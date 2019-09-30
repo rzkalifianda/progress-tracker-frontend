@@ -13,7 +13,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRippleModule, MatInputModule, MatCardModule, MatDividerModule,
-  MatExpansionModule, MatSelectModule, MatSidenavModule, MatDialogModule } from '@angular/material';
+  MatExpansionModule, MatSelectModule, MatSidenavModule, MatDialogModule, MatProgressSpinnerModule } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatIconModule } from '@angular/material/icon';
 import { DropdownComponent } from './core-ui/dropdown/dropdown.component';
@@ -30,7 +30,7 @@ import { CardAddReportDetailComponent } from './components/card-add-report-detai
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CardAddReportTaskComponent } from './components/card-add-report-task/card-add-report-task.component';
 import { ExpansionTileComponent } from './core-ui/expansion-tile/expansion-tile.component';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule} from '@angular/material/list';
 import { CardComponent } from './components/card/card.component';
 import { HomeReportComponent } from './pages/home-report/home-report.component';
 import { Group1172Component } from './svg/group1172/group1172.component';
@@ -50,6 +50,7 @@ import { ModalDataAdminAddComponent } from './components/modal/modal-data-admin-
 import { ModalDataAdminEditComponent } from './components/modal/modal-data-admin-edit/modal-data-admin-edit.component';
 import { ModalDataAdminDeleteComponent } from './components/modal/modal-data-admin-delete/modal-data-admin-delete.component';
 import { ButtonAdminComponent } from './core-ui/button-admin/button-admin.component';
+import { LoginSceneModule } from './pages/login-scene/login-scene.module';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,7 @@ import { ButtonAdminComponent } from './core-ui/button-admin/button-admin.compon
     MainDashboardComponent,
     MainDashboardTimeComponent,
     Group1286Component,
-    LoginAdminComponent
+    LoginAdminComponent,
     ModalComponent,
     ModalDataUserSubmitComponent,
     ModalDataUserDeleteComponent,
@@ -93,7 +94,32 @@ import { ButtonAdminComponent } from './core-ui/button-admin/button-admin.compon
     ButtonAdminComponent,
   ],
   exports: [
-    // CardAddReportTaskComponent,
+    AppComponent,
+    TextViewComponent,
+    TextInputComponent,
+    ButtonComponent,
+    DatepickerComponent,
+    DropdownComponent,
+    LoginSceneComponent,
+    CheckBoxComponent,
+    UserReportDetailComponent,
+    CardReportTitleComponent,
+    Group1191Component,
+    Group1192Component,
+    DatepickerComponent,
+    AddReportComponent,
+    CardAddReportDropdownComponent,
+    CardAddReportButtonComponent,
+    CardAddReportDetailComponent,
+    CardAddReportTaskComponent,
+    CardComponent,
+    HomeReportComponent,
+    ExpansionTileComponent,
+    AdminReportDetailComponent,
+    Group1172Component,
+    MainDashboardComponent,
+    MainDashboardTimeComponent,
+    MatProgressSpinnerModule
   ],
   entryComponents:
   [
@@ -126,7 +152,9 @@ import { ButtonAdminComponent } from './core-ui/button-admin/button-admin.compon
     MatExpansionModule,
     MatListModule,
     MatSelectModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatProgressSpinnerModule,
+    LoginSceneModule,
   ],
   providers: [
     MatDialogModule

@@ -1,6 +1,8 @@
+import { AppService } from './../../app.service';
 import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material';
 import moment from 'moment';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'component-card',
@@ -9,19 +11,30 @@ import moment from 'moment';
 })
 
 export class CardComponent implements OnInit {
-  @Input() data = [];
   @Input() dataHome: any = {};
 
-  constructor() { }
+  constructor(
+    private appService: AppService,
+    private activatedRoutes: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
     const count = this.dataHome.data.length;
-
-    for(let q = 0; q< count; q++)
-    {
-      let testDate = this.dataHome.data[q].reportDate;
-      let finalDate = moment(testDate).format('dddd, DD MMMM YYYY');
+    for (let q = 0; q < count; q++) {
+      const testDate = this.dataHome.data[q].reportDate;
+      const finalDate = moment(testDate).format('dddd, DD MMMM YYYY');
+      this.dataHome.data[q].reportDate = finalDate;
+      this.dataHome[0].data[q].reportDate = finalDate;
       this.dataHome.data[q].reportDate = finalDate;
     }
+  }
+
+  addReport(){
+    this.router.navigateByUrl('home/add-report');
+  }
+
+  reportDetail(){
+    this.router.navigateByUrl('home/report-detail');
   }
 }

@@ -6,10 +6,20 @@
                     <core-ui-text-view text="Progress Tracker Codify" classtouse="title-login"></core-ui-text-view>
                     <core-ui-text-view text="Masukin username sama password kamu" classtouse="bold" class="subtitle-login"></core-ui-text-view>
                     <div class="form-group">
-                        <core-ui-text-input text="Username" classtouse="user"></core-ui-text-input>
+                        <input 
+                        placeholder="Username" 
+                        type="text" 
+                        class="user" 
+                        [(ngModel)]="username" 
+                        name="username">
                     </div>
                     <div class="form-group">
-                        <core-ui-text-input text="Password" type="password" classtouse="user" ></core-ui-text-input>
+                        <input 
+                        placeholder="Password" 
+                        type="password" 
+                        class="user" 
+                        [(ngModel)]="password" 
+                        name="password">
                     </div>
                     <div class="form-group">
                         <a href="#" style="font-family: Source Sans Pro;
@@ -18,7 +28,10 @@
                         color: #0871CE;
                         opacity: 1;
                         text-decoration:none;">Lupa Password</a>
-                        <core-ui-button text="Masuk" classtouse="btn-blue btn-login" onclick='(function(){alert(); })();' style="margin-left: 574px;"></core-ui-button>
+                        <core-ui-button text="Masuk" classtouse="btn-blue btn-login" (click)="login()" style="margin-left: 118px;"></core-ui-button>
+                        <mat-spinner *ngIf="loading" [diameter]="30"></mat-spinner>
+                        <core-ui-text-view classtouse="red" text="Username or Password are Required" *ngIf="empty"></core-ui-text-view>
+                        <core-ui-text-view classtouse="red" text={{errorMessage}} *ngIf="errorLogin"></core-ui-text-view>
                     </div>
                 </div>
             </form>
