@@ -695,7 +695,7 @@ export class AppComponent {
                   {
                      projectName: 'DLL',
                      roleName: 'Role Lain',
-                     task: 
+                     task:
                      [
                         {
                            taskName: 'Desain Dashboard Element',
@@ -714,7 +714,7 @@ export class AppComponent {
                   {
                      projectName: 'DLL',
                      roleName: 'Role Lain',
-                     task: 
+                     task:
                      [
                         {
                            taskName: 'Desain Dashboard Element',
@@ -800,7 +800,7 @@ export class AppComponent {
                   {
                      projectName: 'DLL',
                      roleName: 'Role Lain',
-                     task: 
+                     task:
                      [
                         {
                            taskName: 'Desain Dashboard Element',
@@ -819,7 +819,7 @@ export class AppComponent {
                   {
                      projectName: 'DLL',
                      roleName: 'Role Lain',
-                     task: 
+                     task:
                      [
                         {
                            taskName: 'Desain Dashboard Element',
@@ -849,7 +849,7 @@ export class AppComponent {
 
   ngOnInit() {
   }
-  
+
   chosenYearHandler(normalizedYear: Moment) {
     const ctrlValue = this.date.value;
     ctrlValue.year(normalizedYear.year());
