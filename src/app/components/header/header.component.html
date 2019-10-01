@@ -1,0 +1,16 @@
+<div class="toolbar" role="banner">
+    <div class="logo">
+        <img
+            width="60"
+            alt="Codify"
+            src="http://csic.umn.ac.id/assets/logo-codify.png"
+        />
+    </div>
+    <div class="menu-dropdown">
+        <button class="dropdown" at-button [matMenuTriggerFor]="belowMenu">{{text}}</button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>Forgot Password</button>
+            <button mat-menu-item>Sign Out</button>
+        </mat-menu>
+    </div>
+</div>

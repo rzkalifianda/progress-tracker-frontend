@@ -9,6 +9,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "permissions": [
+    "http://www.google.com/",
+    "https://www.google.com/",
+    "https://*/"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.0",

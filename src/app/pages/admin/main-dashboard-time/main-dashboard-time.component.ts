@@ -10,7 +10,6 @@ export class MainDashboardTimeComponent implements OnInit {
 
  timelines = TIMELINE;
 
-
  onClick(){
     console.log("Card id Clicked!");
  }
