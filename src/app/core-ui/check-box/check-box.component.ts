@@ -12,6 +12,10 @@ export class CheckBoxComponent implements OnInit {
   checked = false;
   @Input() text = 'Checkbox';
   @Input() classtouse = 'x';
+  progresssize: number = 0;
+  updateSetting(event) {
+    this.progresssize = event.value;
+  }
   constructor() { }
 
   ngOnInit() {

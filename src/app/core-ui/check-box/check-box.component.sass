@@ -3,9 +3,9 @@
   display: block
   position: relative
   padding-left: 35px
-  margin-bottom: 12px
+  margin-bottom: 14px
   cursor: pointer
-  font-size: 22px
+  font-size: 14px
   -webkit-user-select: none
   -moz-user-select: none
   -ms-user-select: none
@@ -50,3 +50,53 @@
     -webkit-transform: rotate(45deg)
     -ms-transform: rotate(45deg)
     transform: rotate(45deg)
+
+.cage
+  background: #FFFFFF 0% 0% no-repeat padding-box
+  border: 1px solid #E7E7E7
+  border-radius: 6px
+  opacity: 1
+  padding-top: 20px
+  padding-left: 30px
+  width: 60px
+  height: 40px
+
+.pesento
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  margin-bottom: -30px
+  &.space-between
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+
+.mat-slider
+  width: 270px
+
+.mat-slider.mat-slider-horizontal
+  .mat-slider-wrapper
+    top: 18px
+
+  .mat-slider-track-wrapper
+    height: 9px
+    border-radius: 10px
+
+  .mat-slider-track-background
+    height: 100%
+    background-color: #E7E7E7
+
+  .mat-slider-track-fill
+    height: 100%
+    background: #0871CE 0% 0% no-repeat padding-box
+
+.mat-accent .mat-slider-thumb
+  height: 24px
+  width: 24px
+  background-color: white
+  border: solid 2px #0871CE
+  bottom: -15px
+  right: -20px
+
+.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb
+  background-color: white

@@ -1,10 +1,14 @@
-<div>
+<div class="norm">
   <label class="{{classtouse}}">
     <input type="checkbox" (change)="show = !show" ng-model="show"/>
     <span class="checkmark"></span>{{text}}
   </label>
 
-  <div class="row container-fluid" *ngIf="show" id="divshow" >
-    <input placeholder="ganti dengan slider disini"/>
+  <div class="row container-fluid pesento space-between" *ngIf="show" id="divshow" >
+    <mat-slider #progresssize (change)="updateSetting($event)" step="1" min="0" max="100" [value]="progresssize">
+
+    </mat-slider>
+    <div class="cage">{{progresssize.value}}%</div>
   </div>
+  <br>
 </div>
