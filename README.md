@@ -70,6 +70,11 @@ Tematik Big Assignment
 | METHOD      | POST  |
 | Description | Endpoint used for adding user from CMS |
 
+Request Header
+```
+Content-Type: application/json\
+```
+
 Request Body
 ```
 {
@@ -84,12 +89,14 @@ Response Value
 ```
 {
   success: boolean,
-  data: {
-    _id : ObjectId,
-    email : string,
-    name : string,
-    username : string,
-  },
+  data: [
+    {
+      _id : ObjectId,
+      email : string,
+      name : string,
+      username : string,
+    }
+  ],
   message : "1  New user successfully registered.",
   token : generated with JWT middleware, use this for session and authenticate each time fetching,
 }
@@ -104,6 +111,11 @@ Response Value
 | METHOD      | POST |
 | Description | Endpoint used for login from user or admin |
 
+Request Header
+```
+Content-Type: application/json
+```
+
 Request Body JSON
 ```
 {
@@ -116,12 +128,14 @@ Response Value
 ```
 {
   success: boolean,
-  data: {
-    _id : ObjectId,
-    email : string,
-    name : string,
-    username : string,
-  },
+  data: [
+    {
+      _id : ObjectId,
+      email : string,
+      name : string,
+      username : string,
+    }
+  ],
   message : "1 user found.",
   token : generated with JWT middleware, use this for session and authenticate each time fetching,
 }
@@ -279,17 +293,17 @@ Response Value
 
 # Features
 
-- [X] Add Role (ADMIN HOME SCENE)
+- [X] Add Roles (ADMIN HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
 | FETCH       | api/feature/admin/add-role |
 | METHOD      | POST |
-| Description | Feature's Endpoint used to add a post with multi-part form |
+| Description | Feature's Endpoint used to add a role |
 
 Request Header
 ```
-Content-Type: multipart/form-data,
+Content-Type: application/json
 authorization : <token app get when login>
 ```
 
@@ -310,17 +324,17 @@ Response Value
 ```
 <br/>
 
-- [X] Add Role (ADMIN HOME SCENE)
+- [X] Add Projects (ADMIN HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
-| FETCH       | api/feature/admin/add-role |
+| FETCH       | api/feature/admin/add-project |
 | METHOD      | POST |
-| Description | Feature's Endpoint used to add a post with multi-part form |
+| Description | Feature's Endpoint used to add a project |
 
 Request Header
 ```
-Content-Type: multipart/form-data,
+Content-Type: application/json
 authorization : <token app get when login>
 ```
 
@@ -336,7 +350,70 @@ Response Value
 {
   success : boolean,
   data : [],
-  message : "1 New role successfully inserted."
+  message : "1 New project successfully inserted."
+}
+```
+<br/>
+
+- [X] Add Reports (USER HOME SCENE)
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | api/feature/add-report |
+| METHOD      | POST |
+| Description | Feature's Endpoint used to add a report |
+
+Request Header
+```
+Content-Type: application/json
+authorization : <token app get when login>
+```
+
+Request Body JSON
+```
+{
+	"reportDate": date,
+	"division": Array<Division>[
+		{
+			"projectName": string,
+			"roleName": string,
+			"task": Array<Task>[
+				{
+					"jobTitle": string,
+					"jobDesc": string,	
+					"progress": number
+				},
+        {
+					"jobTitle": string,
+					"jobDesc": string,	
+					"progress": number
+				},
+        ...
+			]
+		},
+		{
+			"projectName": string,
+			"roleName": string,
+			"task": Array<Task>[
+				{
+					"jobTitle": string,
+					"jobDesc": string,	
+					"progress": number
+				},
+        ...
+			]
+		},
+    ...
+	]
+}
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [],
+  message : "1 New report successfully inserted."
 }
 ```
 <br/>
