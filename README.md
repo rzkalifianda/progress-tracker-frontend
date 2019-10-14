@@ -144,7 +144,7 @@ Response Value
 
 # Pages
 
-- [X] AdminHome (following only, for HOME SCENE)
+- [X] AdminHome (ADMIN HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
@@ -192,6 +192,40 @@ Response Value
     ],
   },
   message: "Successfully getting ADMIN HOME data"
+}
+```
+<br/>
+
+- [X] AdminTimeline (ADMIN TIMELINE SCENE)
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | /api/page/admin/timeline?filterBy=roles/projects&id=roleID/projectID |
+| METHOD      | GET |
+| Description | Endpoint used to display all of the timeline which are filtered by roles / projects |
+
+Request Header
+```
+authorization : <token app get when login>
+```
+
+Request Body
+```
+-
+```
+
+Response Value
+```
+{
+  "success": boolean,
+  "data": [
+    {
+      "reportdate": DATE eg."2019-10-04T17:00:00.000Z",
+      "projectname": Array<projectName/roleName>
+    },
+    ...
+  ],
+  "message": "Successfully getting ADMIN TIMELINE data"
 }
 ```
 <br/>
