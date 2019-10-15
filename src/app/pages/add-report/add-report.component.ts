@@ -1,7 +1,9 @@
-import { AppService } from './../../app.service';
+import { AddReportService } from './add-report.service';
 import { Component, OnInit, Input, ComponentRef, ViewContainerRef, ViewChild, ComponentFactoryResolver, ComponentFactory } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CardAddReportDropdownComponent } from 'src/app/components/card-add-report-dropdown/card-add-report-dropdown.component';
+import { HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { ResponseObject } from 'src/app/types';
 
 @Component({
   selector: 'add-report',
@@ -9,67 +11,52 @@ import { CardAddReportDropdownComponent } from 'src/app/components/card-add-repo
   styleUrls: ['./add-report.component.sass']
 })
 export class AddReportComponent implements OnInit {
-  @ViewChild('viewContainerRef', { static: true, read: ViewContainerRef }) VCR: ViewContainerRef;
-  @Input() dataProjectName = '';
-  @Input() dataRoles = '';
-
-  index: number = 0;
-  componentsReferences = [];
+  dataProjectsName: any;
+  dataRolesName: any;
+  objectCard: any;
+  selectedData: any;
 
   showDetail = false;
 
-  constructor( 
-    private appService: AppService,
+  constructor(
     private activatedRoutes: ActivatedRoute,
     private router: Router,
-    private _translateService:AppService,
+    private addReportService: AddReportService,
     private CFR: ComponentFactoryResolver,
+    private httpClient: HttpClient
   ) { }
 
-  ngOnInit() {
-    this._translateService.projectName.subscribe(
-      () => {
-        this._translateService.rolesName.subscribe(
-          () => {
-            this.showDetail = true;
-          }
-        );
-      }
+  async ngOnInit(){
+    const token = localStorage.getItem('userToken');
+    const headers = new HttpHeaders()
+            .set('authorization', token);
+    await this.httpClient.get('https://nameless-cove-75161.herokuapp.com/api/page/project-role',
+    {
+      headers
+    })
+    .subscribe(
+      (response: ResponseObject)  => {
+        this.dataProjectsName = response.data.project;
+        this.dataRolesName = response.data.role;
+        this.objectCard = [{
+          projects: this.dataProjectsName,
+          roles: this.dataRolesName,
+        }]
+      },
+    error  => {
+      console.log(error);
+    }
     );
   }
 
-  addProject(){
-    const componentFactory = this.CFR.resolveComponentFactory(CardAddReportDropdownComponent);
-    const componentRef: ComponentRef<CardAddReportDropdownComponent> = this.VCR.createComponent(componentFactory);
-    const currentComponent = componentRef.instance;
-    componentRef.instance.projects = [
-      {
-        dataDropdown : 'Dinas Kesehatan',
-      },
-      {
-        dataDropdown : 'MacroAd',
-      }
-    ];
-    componentRef.instance.roles = [
-      {
-        dataDropdown : 'Back End Engineer',
-      },
-      {
-        dataDropdown : 'Front End Engineer',
-      },
-      {
-        dataDropdown : 'Project Manager',
-      },
-      {
-        dataDropdown : 'QA Analyst',
-      },
-      {
-        dataDropdown : 'UI / UX Designer',
-      }
-    ];
-    currentComponent.selfRef = currentComponent;
-    currentComponent.index = ++this.index;
-    currentComponent.compInteraction = this;
-    this.componentsReferences.push(componentRef);
+  addCardProject() {
+    this.objectCard.push({
+      projects: this.dataProjectsName,
+      roles: this.dataRolesName,
+    });
+  }
+
+  selectProject(item){
+    this.selectedData = [item];
   }
 }

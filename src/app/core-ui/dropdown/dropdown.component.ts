@@ -1,3 +1,4 @@
+import { AddReportService } from './../../pages/add-report/add-report.service';
 import { AppService } from './../../app.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
@@ -20,27 +21,30 @@ export class DropdownComponent implements OnInit {
   selectedData;
 
   constructor(
-    private appService: AppService,
+    private addReportService: AddReportService,
     private activatedRoutes: ActivatedRoute,
     private router: Router,
     ) { }
 
-  ngOnInit() {
-    this.result = this.data;
+  ngOnChanges(){
+    console.log('data on changes', this.data);
+    this.result = this.data.map((item) =>
+    {
+      return {
+        id: item.id,
+        name: item.projectname ? item.projectname : item.rolename,
+      }
+    })
+  }
 
+  ngOnInit() {
   }
 
   selected(){
-    if(this.function === "selectProjectName")
-    {
-      this.appService.setSelectedProjectName(this.selectedData);
-    }
-    else if (this.function === "selectRolesName")
-    {
-      this.appService.setSelectedRolesName(this.selectedData);
-    }else if (this.function === "selectMainDashboardName")
-    {
-      this.appService.setSelectedMainDashboardName(this.selectedData);
+    if (this.function === 'selectProjectName') {
+      this.addReportService.setSelectedProjectName(this.selectedData);
+    } else if (this.function === 'selectRolesName') {
+      this.addReportService.setSelectedRolesName(this.selectedData);
     }
   }
 }

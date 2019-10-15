@@ -3,17 +3,16 @@
   <div class="column" >
     <component-card-report-title></component-card-report-title>
     <br>
-    <card-add-report-dropdown [dataProjectName]="dataProjectName" [dataRoles]="dataRoles"></card-add-report-dropdown>
-    <div>
-      <ng-template #viewContainerRef></ng-template>
+    <div *ngFor="let item of objectCard" (click)="selectProject(item)">
+        <card-add-report-dropdown [dataProjectsName]="item.projects" [dataRolesName]="item.roles"></card-add-report-dropdown>
     </div>
     <br>
-    <card-add-report-button (click)="addProject()"></card-add-report-button>
+    <card-add-report-button (click)="addCardProject()"></card-add-report-button>
   </div>
   <div class="column1">
     <mat-divider vertical style="height:676px; position: absolute;"></mat-divider>
   </div>
-  <div class="column2" *ngIf="showDetail">
+  <div class="column2" *ngFor="let obj of selectedData">
     <card-add-report-detail></card-add-report-detail>
   </div>
 </div>

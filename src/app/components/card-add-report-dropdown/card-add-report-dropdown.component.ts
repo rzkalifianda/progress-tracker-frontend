@@ -12,15 +12,13 @@ export interface myinterface {
   styleUrls: ['./card-add-report-dropdown.component.sass']
 })
 export class CardAddReportDropdownComponent implements OnInit {
-
-  
   public index: number;
   public selfRef: CardAddReportDropdownComponent;
 
   public compInteraction: myinterface;
 
-  @Input() dataProjectName = [];
-  @Input() dataRoles = [];
+  @Input() dataProjectsName;
+  @Input() dataRolesName;
 
   @Output() dataProjectNameFinal;
   @Output() dataRolesFinal;
@@ -37,12 +35,15 @@ export class CardAddReportDropdownComponent implements OnInit {
     private router: Router,
   ) { }
 
-  ngOnInit() {
-    this.dataProjectNameFinal = this.dataProjectName;
-    this.dataRolesFinal = this.dataRoles;
-    if (this.projects.length != 0 && this.roles.length != 0){
+  ngOnChanges(){
+    this.dataProjectNameFinal = this.dataProjectsName;
+    this.dataRolesFinal = this.dataRolesName;
+    if (this.projects.length !== 0 && this.roles.length !== 0) {
       this.dataProjectNameFinal = this.projects;
       this.dataRolesFinal = this.roles;
     }
+  }
+
+  ngOnInit() {
   }
 }

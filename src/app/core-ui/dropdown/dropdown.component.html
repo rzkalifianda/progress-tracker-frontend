@@ -1,6 +1,10 @@
   <div class="{{classtouse}}" >
     <select  (change)="selected()" [(ngModel)]="selectedData" >
-    <option [ngValue]="undefined" hidden>{{placeholder}}</option>
-    <option *ngFor="let data of result">{{data.dataDropdown}} </option>
+    <option [ngValue]="undefined" hidden>
+      {{placeholder}}
+    </option>
+    <option *ngFor="let data of result">
+      {{data.name}}
+    </option>
   </select>
 </div>

@@ -3,3 +3,9 @@ export type Timeline={
     otherProjects: string;
     projects: string[];
 }
+
+export type ResponseObject = {
+    success: boolean;
+    data: any;
+    message: string;
+}

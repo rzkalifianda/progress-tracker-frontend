@@ -20,18 +20,6 @@ export class CardAddReportDetailComponent implements OnInit {
   @Input() rolesName = '';
 
   ngOnInit() {
-    this._translateService.projectName.subscribe(
-      () => {
-        this.projectName = this.appService.getSelectedProjectName();
-      }
-    );
-    this._translateService.rolesName.subscribe(
-      () => {
-        this.rolesName = this.appService.getSelectedRolesName();
-      }
-    );
-    this.projectName = this.appService.getSelectedProjectName();
-    this.rolesName = this.appService.getSelectedRolesName();
   }
 
   addMoreClicked(){
