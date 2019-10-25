@@ -2,6 +2,8 @@ import { AddReportService } from './../../pages/add-report/add-report.service';
 import { AppService } from './../../app.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import { MainDashboardService } from 'src/app/pages/admin/main-dashboard/main-dashboard.service';
+import { MainDashboardComponent } from 'src/app/pages/admin/main-dashboard/main-dashboard.component';
 declare var angular: any;
 
 @Component({
@@ -22,12 +24,13 @@ export class DropdownComponent implements OnInit {
 
   constructor(
     private addReportService: AddReportService,
+    private mainDashboardService: MainDashboardService,
     private activatedRoutes: ActivatedRoute,
     private router: Router,
+    private mainDashboard: MainDashboardComponent,
     ) { }
 
   ngOnChanges(){
-    console.log('data on changes', this.data);
     this.result = this.data.map((item) =>
     {
       return {
@@ -40,11 +43,14 @@ export class DropdownComponent implements OnInit {
   ngOnInit() {
   }
 
-  selected(){
+  selected() {
     if (this.function === 'selectProjectName') {
       this.addReportService.setSelectedProjectName(this.selectedData);
     } else if (this.function === 'selectRolesName') {
       this.addReportService.setSelectedRolesName(this.selectedData);
+    } else if (this.function === 'selectedMainDashboardCategory') {
+      this.mainDashboardService.setSelectedMainDashboardCategory(this.selectedData);
+      this.mainDashboard.showResult();
     }
   }
 }

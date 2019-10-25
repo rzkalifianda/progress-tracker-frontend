@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from './../../app.service';
+import { MainDashboardService } from 'src/app/pages/admin/main-dashboard/main-dashboard.service';
+import { MainDashboardComponent } from 'src/app/pages/admin/main-dashboard/main-dashboard.component';
 
 @Component({
   selector: 'core-ui-expansion-tile',
@@ -14,23 +16,25 @@ export class ExpansionTileComponent implements OnInit {
 
   @Input() text = '';
   constructor(
-    private appService: AppService
+    private appService: AppService,
+    private mainDashboardService: MainDashboardService,
+    private mainDashboard: MainDashboardComponent,
   ) {}
 
   ngOnInit() {
 
-    if (this.appService.getSelectedMainDashboardName() === 'User') {
+    if (this.mainDashboard.selectedMainDashboardDropdown === 'User') {
       this.showLihatDetailRole = false;
       this.showProject = false;
       this.showReport = false;
       this.showUser = true;
     }
-    if (this.appService.getSelectedMainDashboardName() === 'Project') {
+    if (this.mainDashboard.selectedMainDashboardDropdown === 'Project') {
       this.showProject = true;
       this.showReport = false;
       this.showUser = false;
     }
-    if (this.appService.getSelectedMainDashboardName() === 'Role') {
+    if (this.mainDashboard.selectedMainDashboardDropdown === 'Role') {
       this.showProject = false;
       this.showReport = true;
       this.showUser = false;

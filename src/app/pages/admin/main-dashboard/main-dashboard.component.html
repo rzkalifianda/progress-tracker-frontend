@@ -2,7 +2,7 @@
 <div class="top">
     <div class="beinline-left">
         <core-ui-dropdown
-            [data]="dataMainDashboardFinal" function="selectMainDashboardName"
+            [data]="dataMainDashboardDropdown" function="selectedMainDashboardCategory"
             placeholder="Project" classtouse="bluewhite"
             style="position: absolute; top: 15px; left: 40px;">
         </core-ui-dropdown>
@@ -20,32 +20,44 @@
 
 <div class="kiddie">
     <div *ngIf="showDetailProject">
-        <div *ngFor="let obj of dataMainDashboard[0].detail">
+        <div *ngFor="let obj of dataProjectName">
             <div class="dropdown bondro1">
-                <core-ui-expansion-tile [text]="obj.name"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.projectname"></core-ui-expansion-tile>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showSearchProject">
+        <div *ngFor="let obj of searchDataProject">
+            <div class="dropdown bondro1">
+                <core-ui-expansion-tile [text]="obj.projectname"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
     <div *ngIf="showDetailRole">
-        <div *ngFor="let obj of dataMainDashboard[1].detail">
+        <div *ngFor="let obj of dataRoleName">
             <div class="dropdown bondro1">
-                <core-ui-expansion-tile [text]="obj.name"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.rolename"></core-ui-expansion-tile>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showSearchRole">
+        <div *ngFor="let obj of searchDataRole">
+            <div class="dropdown bondro1">
+                <core-ui-expansion-tile [text]="obj.rolename"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
     <div *ngIf="showDetailUser">
-        <div *ngFor="let obj of dataMainDashboard[2].detail">
+        <div *ngFor="let obj of dataUserName">
             <div class="dropdown bondro2">
-                <core-ui-expansion-tile [text]="obj.name"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.username"></core-ui-expansion-tile>
             </div>
-            <div class="dropdown">
-                <core-ui-expansion-tile></core-ui-expansion-tile>
-            </div>
-            <div class="dropdown">
-                <core-ui-expansion-tile></core-ui-expansion-tile>
-            </div>
-            <div class="dropdown">
-                <core-ui-expansion-tile></core-ui-expansion-tile>
+        </div>
+    </div>
+    <div *ngIf="showSearchUser">
+        <div *ngFor="let obj of searchDataUser">
+            <div class="dropdown bondro1">
+                <core-ui-expansion-tile [text]="obj.username"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
