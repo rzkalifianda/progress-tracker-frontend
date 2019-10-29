@@ -1,58 +1,59 @@
 <div fxLayout="row">
-    <mat-card 
+    <mat-card
         class="home-report-card home-new-report card"
         style="display:flex; justify-content:center; align-items:center;"
         >
         <core-ui-button text="➕ Lapor progres kamu" classtouse="btn-home-new btn-add" (click)="addReport()"></core-ui-button>
     </mat-card>
-    <div class="container" *ngFor = "let data of dataHome.data">
+    <div class="container" *ngFor = "let data of dataHome.data.slice(0, 3)">
         <mat-card class = "cardHome">
             <mat-card-header>
                 <mat-card-title>
-                    <core-ui-text-view 
-                        text = "{{data.reportDate}} " 
+                    <core-ui-text-view
+                        text = "{{data.reportdate | date: 'EEEE, d MMMM yyyy'}}"
                         classtouse = "subtitle">
                     </core-ui-text-view>
-                    <mat-divider>
-                    </mat-divider>
+                    <mat-divider></mat-divider>
                 </mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <div *ngFor = "let project of dataHome.data[0].division.slice(0, 2)">
-                    <core-ui-text-view 
-                        text = "{{project.projectName}}" 
+                <div *ngFor = "let project of data.division.slice(0, 2)">
+                    <core-ui-text-view
+                        text = "{{project.projectname}}"
                         classtouse="default bold">
                     </core-ui-text-view>
-                    <core-ui-text-view 
-                        text = "{{project.roleName}}" 
+                    <core-ui-text-view
+                        text = "{{project.rolename}}"
                         classtouse = "grey">
                     </core-ui-text-view>
-                    <div *ngFor = "let task of dataHome.data[0].division[0].task.slice(0,3)">
+                    <div *ngFor = "let task of data.division[0].task.slice(0 , 2)">
                         <div fxLayout = "row" layout-xs="column">
                             <div fxFlex = "90">
-                                <core-ui-text-view 
-                                    text = "{{task.taskName}}" 
+                                <core-ui-text-view
+                                    text = "{{task.jobdesc}}"
                                     classtouse = "default">
                                 </core-ui-text-view>
                             </div>
                             <div fxFlex = "10" layout-align="end center">
-                                <core-ui-text-view 
-                                    text = "{{task.progress}}%">
+                                <core-ui-text-view
+                                    text = "{{task.percentage}}%">
                                 </core-ui-text-view>
                             </div>
                         </div>
                     </div>
                     <core-ui-text-view
-                        text="+ {{dataHome.data[0].division[0].task.length-3}} pekerjaan lainnya"
+                        text="{{data.division[0].task.length > 2 ? '+ ' + (data.division[0].task.length - 2) + ' pekerjaan lainnya' : ''}}"
                         classtouse="default">
                     </core-ui-text-view>
                     <mat-divider></mat-divider>
+                    <div ></div>
                 </div>
-                <core-ui-text-view 
-                    text = "+ {{dataHome.data[0].division.length - 2}} project lainnya" 
+                <core-ui-text-view
+                    text = "{{data.division.length > 2 ? '+ ' + (data.division.length - 2) + ' project lainnya' : ''}}"
                     classtouse = "bold">
                 </core-ui-text-view>
-                <core-ui-button text="Lihat isinya dong" classtouse="btn-blue btn-incard-homeconfirm" (click)="reportDetail()"></core-ui-button>
+                <br>
+                <core-ui-button text="Lihat isinya dong" classtouse="btn-blue btn-incard-homeconfirm" (click)="reportDetail(data.reportdate)"></core-ui-button>
             </mat-card-content>
         </mat-card>
     </div>

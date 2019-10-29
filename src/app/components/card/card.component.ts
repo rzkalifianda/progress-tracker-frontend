@@ -3,6 +3,7 @@ import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material';
 import moment from 'moment';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HomeReportService } from 'src/app/pages/home-report/home-report.service';
 
 @Component({
   selector: 'component-card',
@@ -17,24 +18,21 @@ export class CardComponent implements OnInit {
     private appService: AppService,
     private activatedRoutes: ActivatedRoute,
     private router: Router,
+    private homeReportService: HomeReportService
   ) { }
 
-  ngOnInit() {
-    const count = this.dataHome.data.length;
-    for (let q = 0; q < count; q++) {
-      const testDate = this.dataHome.data[q].reportDate;
-      const finalDate = moment(testDate).format('dddd, DD MMMM YYYY');
-      this.dataHome.data[q].reportDate = finalDate;
-      this.dataHome[0].data[q].reportDate = finalDate;
-      this.dataHome.data[q].reportDate = finalDate;
-    }
-  }
+  ngOnInit() {}
 
-  addReport(){
+  addReport() {
     this.router.navigateByUrl('home/add-report');
   }
 
-  reportDetail(){
+  reportDetail(reportdate: string) {
     this.router.navigateByUrl('home/report-detail');
+    console.log(reportdate);
+  }
+
+  ngOnChanges() {
+    console.log('cardComponent', this.dataHome);
   }
 }
