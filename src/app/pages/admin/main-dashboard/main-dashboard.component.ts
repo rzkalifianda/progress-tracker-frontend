@@ -38,6 +38,8 @@ export class MainDashboardComponent implements OnInit {
 
 
   theSearchResult = '';
+  theCurrentChosen = '';
+  featureTambah = '';
 
   mainDashboards = [];
   constructor(
@@ -54,6 +56,7 @@ export class MainDashboardComponent implements OnInit {
 
   showResult() {
     this.selectedMainDashboardDropdown = this.mainDashboardService.getSelectedMainDashboardCategory();
+    this.featureTambah = this.selectedMainDashboardDropdown;
 
     if (this.selectedMainDashboardDropdown === 'Project' || this.selectedMainDashboardDropdown === '') {
       if(this.theSearchResult.length === 0) {
@@ -110,6 +113,7 @@ export class MainDashboardComponent implements OnInit {
           { id : 2, projectname : 'Role',  },
           { id : 3, projectname : 'User',  },
         ];
+        this.featureTambah = 'Project';
         this.dataMainDashboardDropdown = homeDropdown;
         this.dataProjectName = response.data.project;
         this.dataRoleName = response.data.role;
@@ -133,5 +137,14 @@ export class MainDashboardComponent implements OnInit {
     this.searchDataUser =
       this.searchDataUser.filter(theData => theData.username.toLowerCase().includes(this.theSearchResult.toLowerCase()) );
     this.showResult();
+  }
+  getDetailName(chosenData) {
+    if (this.selectedMainDashboardDropdown === 'Project' || this.selectedMainDashboardDropdown === '') {
+      this.theCurrentChosen = chosenData.projectname;
+    } else if (this.selectedMainDashboardDropdown === 'Role') {
+      this.theCurrentChosen = chosenData.rolename;
+    } else if (this.selectedMainDashboardDropdown === 'User') {
+      this.theCurrentChosen = chosenData.username;
+    }
   }
 }

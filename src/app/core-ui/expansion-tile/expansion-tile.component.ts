@@ -22,7 +22,6 @@ export class ExpansionTileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-
     if (this.mainDashboard.selectedMainDashboardDropdown === 'User') {
       this.showLihatDetailRole = false;
       this.showProject = false;
@@ -39,6 +38,16 @@ export class ExpansionTileComponent implements OnInit {
       this.showReport = true;
       this.showUser = false;
     }
+  }
+
+  doDetail() {
+    console.log('Lihat Detail ' + this.mainDashboard.theCurrentChosen);
+  }
+  doEdit() {
+    console.log('Edit ' + this.mainDashboard.theCurrentChosen);
+  }
+  doDelete() {
+    console.log('Delete ' + this.mainDashboard.theCurrentChosen);
   }
 
 }

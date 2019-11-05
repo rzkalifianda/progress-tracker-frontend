@@ -9,14 +9,14 @@
         </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <mat-action-list class="fontsize">
+    <mat-action-list>
         <mat-divider></mat-divider>
         <div *ngIf="showLihatDetailRole">
-            <button mat-list-item> Lihat Detail Role </button>
+            <button mat-list-item (click)="doDetail()"> Lihat Detail Role </button>
         </div>
         <mat-divider></mat-divider>
-            <button mat-list-item> Edit Role </button>
+            <button mat-list-item (click)="doEdit()"> Edit Role </button>
         <mat-divider></mat-divider>
-            <button mat-list-item> Delete Role </button>
+            <button mat-list-item (click)="doDelete()"> Delete Role </button>
     </mat-action-list>
 </mat-expansion-panel>

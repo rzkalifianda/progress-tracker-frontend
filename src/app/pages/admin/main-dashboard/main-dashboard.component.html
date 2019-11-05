@@ -14,7 +14,7 @@
     </div>
     <div class="beinline-right">
         <core-ui-button text="Export csv" classtouse="btn-tosca btn-free-homelittle"></core-ui-button>&nbsp;&nbsp;
-        <core-ui-button text="➕ Tambah Role" classtouse="btn-home-new"></core-ui-button>
+        <core-ui-button text="➕ Tambah {{featureTambah}}" classtouse="btn-home-new"></core-ui-button>
     </div>
 </div>
 
@@ -22,42 +22,42 @@
     <div *ngIf="showDetailProject">
         <div *ngFor="let obj of dataProjectName">
             <div class="dropdown bondro1">
-                <core-ui-expansion-tile [text]="obj.projectname"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.projectname" (click)="getDetailName(obj)"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
     <div *ngIf="showSearchProject">
         <div *ngFor="let obj of searchDataProject">
             <div class="dropdown bondro1">
-                <core-ui-expansion-tile [text]="obj.projectname"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.projectname" (click)="getDetailName(obj)"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
     <div *ngIf="showDetailRole">
         <div *ngFor="let obj of dataRoleName">
             <div class="dropdown bondro1">
-                <core-ui-expansion-tile [text]="obj.rolename"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.rolename" (click)="getDetailName(obj)"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
     <div *ngIf="showSearchRole">
         <div *ngFor="let obj of searchDataRole">
             <div class="dropdown bondro1">
-                <core-ui-expansion-tile [text]="obj.rolename"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.rolename" (click)="getDetailName(obj)"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
     <div *ngIf="showDetailUser">
         <div *ngFor="let obj of dataUserName">
             <div class="dropdown bondro2">
-                <core-ui-expansion-tile [text]="obj.username"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.username" (click)="getDetailName(obj)"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
     <div *ngIf="showSearchUser">
         <div *ngFor="let obj of searchDataUser">
             <div class="dropdown bondro1">
-                <core-ui-expansion-tile [text]="obj.username"></core-ui-expansion-tile>
+                <core-ui-expansion-tile [text]="obj.username" (click)="getDetailName(obj)"></core-ui-expansion-tile>
             </div>
         </div>
     </div>
