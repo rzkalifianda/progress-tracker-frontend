@@ -60,9 +60,9 @@ Tematik Big Assignment
 
 <br/>
   
-# Authentication
+## Authentication
 
-- [X] AddUser (ADMIN HOME SCENE)
+# AddUser (ADMIN HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
@@ -103,7 +103,7 @@ Response Value
 ```
 <br/>
 
-- [X] Login (USER LOGIN SCENE)
+# Login (USER LOGIN SCENE)
 
 | A | B |
 | ----------- | ------------- |
@@ -142,9 +142,9 @@ Response Value
 ```
 <br/>
 
-# Pages
+## Pages
 
-- [X] AdminHome (ADMIN HOME SCENE)
+# AdminHome (ADMIN HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
@@ -196,7 +196,7 @@ Response Value
 ```
 <br/>
 
-- [X] AdminTimeline (ADMIN TIMELINE SCENE)
+# AdminTimeline (ADMIN TIMELINE SCENE)
 
 | A | B |
 | ----------- | ------------- |
@@ -230,7 +230,7 @@ Response Value
 ```
 <br/>
 
-- [X] UserHome (USER HOME SCENE)
+# UserHome (USER HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
@@ -281,7 +281,7 @@ Response Value
 ```
 <br/>
 
-- [X] ProjectsAndRoles (ADD REPORT DROPDOWN)
+# ProjectsAndRoles (ADD REPORT DROPDOWN)
 
 | A | B |
 | ----------- | ------------- |
@@ -324,10 +324,56 @@ Response Value
 ```
 <br/>
 
+# User Report Detail (USER REPORT DETAIL)
 
-# Features
+| A | B |
+| ----------- | ------------- |
+| FETCH       | /api/page/report-detail?date=YYYY-MM-DD  |
+| METHOD      | GET |
+| Description | Endpoint used for getting all report detail from 1 user |
 
-- [X] Add Roles (ADMIN HOME SCENE)
+Request Header
+```
+Content-Type: application/json
+authorization : <token app get when login>
+```
+
+Request Body JSON
+```
+-
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [
+    {
+      id: number,
+      projectname: string,
+      rolename: string,
+      task: [
+        {
+          id: number,
+          jobtitle: string,
+          jobdesc: string,
+          percentage: number,
+          divisionid: number,
+        },
+        ...
+      ]
+    },
+    ...
+  ]
+  message : "Successfully get user's reports"
+}
+```
+<br/>
+
+
+## Features
+
+# Add Roles (ADMIN HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
@@ -358,7 +404,7 @@ Response Value
 ```
 <br/>
 
-- [X] Add Projects (ADMIN HOME SCENE)
+# Add Projects (ADMIN HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
@@ -389,7 +435,7 @@ Response Value
 ```
 <br/>
 
-- [X] Add Reports (USER HOME SCENE)
+# Add Reports (USER HOME SCENE)
 
 | A | B |
 | ----------- | ------------- |
