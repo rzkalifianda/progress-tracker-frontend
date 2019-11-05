@@ -9,3 +9,8 @@ export type ResponseObject = {
     data: any;
     message: string;
 }
+export type ResponseObject = {
+    success: boolean;
+    data: any;
+    message: string;
+}

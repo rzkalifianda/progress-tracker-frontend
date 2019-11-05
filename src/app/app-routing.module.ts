@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginSceneComponent } from './pages/login-scene/login-scene.component';
 import { AddReportComponent } from './pages/add-report/add-report.component';
 import { MainDashboardComponent } from './pages/admin/main-dashboard/main-dashboard.component';
+import { MainDashboardTimeComponent } from './pages/admin/main-dashboard-time/main-dashboard-time.component';
 
 
 export const routes: Routes = [
@@ -49,7 +50,7 @@ export const routes: Routes = [
       },
       {
         path: 'main-dashboard-time',
-        component: MainDashboardComponent
+        component: MainDashboardTimeComponent
       }
     ]
   }

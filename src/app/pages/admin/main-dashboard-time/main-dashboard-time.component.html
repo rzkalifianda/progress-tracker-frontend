@@ -20,18 +20,19 @@
             <input id="date" type="date" value="">
         </div>
 
-        <div class="date">
-            <mat-card *ngFor="let timeline of timelines" (click)="onClick()" class="cabor">
+        <div>
+            <mat-card *ngFor="let item of objectCard" (click)="onClick()" class="cabor">
                 <mat-card-header>
-                    <mat-card-title class="title">{{ timeline.date | date:'fullDate'}}</mat-card-title>
+                    <mat-card-title class="title">{{ item.reportdate | date:'fullDate'}}</mat-card-title>
                 </mat-card-header>
                 <hr />
-                <mat-card-content class="content" *ngFor="let project of timeline.projects">
-                    {{project}}
+                <mat-card-content  class="content" *ngFor="let role of item.rolename.slice(0,3)">
+                    <div>
+                        {{role}}
+                    </div>
+
                 </mat-card-content>
-                <div class="content">
-                    {{'+' +  timeline.otherProjects + ' Role lainnya' }}
-                </div>
+                <p class="content" *ngIf="item.rolename.length > 3">{{'+ ' + (item.rolename.length - 3) + ' role lainnya'}}</p>
             </mat-card>
         </div>
     </section>
