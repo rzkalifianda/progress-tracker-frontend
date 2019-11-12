@@ -5,44 +5,6 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
 })
 export class AppService {
 
-  @Output() mainDashboardName:EventEmitter <any> = new EventEmitter();
-
-  private dummyMainDashboardName =
-  {
-    data: [
-      {
-        dataDropdown : 'Project',
-        detail: [
-            {name: 'Dinas Kesehatan'},
-            {name: 'MacroAd'},
-            {name: 'Sistem Tematik'}
-        ]
-      },
-      {
-        dataDropdown : 'Role',
-        detail: [
-            {name: 'Back End Engineer'},
-            {name: 'Front End Engineer'},
-            {name: 'Project Manager'},
-            {name: 'QA Analyst'},
-            {name: 'UI / UX Designer'}
-        ]
-      },
-      {
-        dataDropdown : 'User',
-        detail: [
-            {name: 'Karel'},
-            {name: 'Fian'},
-            {name: 'Sherly'},
-            {name: 'Febry'},
-            {name: 'Daniel'},
-            {name: 'Rezkhi'}
-        ]
-      }
-    ],
-    selected: ''
-  };
-
   private homeData =
     {
        success: true,
@@ -274,21 +236,8 @@ export class AppService {
       message: 'Berhasil fetch HOME',
    };
 
-  getHomeData(){
+  getHomeData() {
     return this.homeData;
-  }
-
-  getDropdownMainDashboard() {
-    return this.dummyMainDashboardName;
-  }
-
-  getSelectedMainDashboardName() {
-    return this.dummyMainDashboardName.selected;
-  }
-
-  setSelectedMainDashboardName(selectedMainDashboardName: string){
-    this.dummyMainDashboardName.selected = selectedMainDashboardName;
-    this.mainDashboardName.emit(selectedMainDashboardName);
   }
 
   constructor() { }

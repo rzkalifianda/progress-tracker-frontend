@@ -7,17 +7,17 @@
                     <core-ui-text-view text="Laporan" classtouse="title"></core-ui-text-view>
                 </mat-card-title>
                 <mat-card-subtitle>
-                    <core-ui-text-view text="Rabu, 26 November 2019" classtouse="subtitle"></core-ui-text-view>
+                    <core-ui-text-view text="{{this.stringDate | date: 'EEEE, d MMMM yyyy'}}" classtouse="subtitle"></core-ui-text-view>
                 </mat-card-subtitle>
             </mat-card>
-            <mat-card *ngFor="let obj of dataDummy" class="cabor" (click)="change(obj)">
+            <mat-card #commentCard *ngFor="let obj of dataReportDetail" class="cabor" (click)="change(obj)" tabindex="0">
                 <div class="minmarg1">
                     <div class='beinline-left'>
                         <svg-group1191></svg-group1191>
                     </div>
                     <div class='beinline-right'>
                         <mat-card-title>
-                            <core-ui-text-view [text]="obj.jobi" classtouse="bold"></core-ui-text-view>
+                            <core-ui-text-view [text]="obj.projectname" classtouse="bold"></core-ui-text-view>
                         </mat-card-title>
                     </div>
                 </div>
@@ -27,12 +27,12 @@
                     </div>
                     <div class='beinline-right'>
                         <mat-card-subtitle>
-                                <core-ui-text-view [text]="obj.role" classtouse="grey"></core-ui-text-view>
+                                <core-ui-text-view [text]="obj.rolename" classtouse="grey"></core-ui-text-view>
                         </mat-card-subtitle>
                     </div>
                 </div>
                 <mat-card-subtitle>
-                    <core-ui-text-view [text]="'Kamu sudah melakukan ' + obj.workTotal + ' pekerjaan pada project ini'" classtouse="blue"></core-ui-text-view>
+                    <core-ui-text-view [text]="'Kamu sudah melakukan ' + obj.task.length + ' pekerjaan pada project ini'" classtouse="blue"></core-ui-text-view>
                 </mat-card-subtitle>
             </mat-card>
             <br><br><br>
@@ -46,19 +46,19 @@
                 <div class="imagi">
                     <div *ngFor="let tta of obj.task">
                         <div class="nextnext">
-                            <mat-card class="caboria">
+                            <mat-card #commentCard class="caboria" tabindex="0">
                                 <div class="pesento space-between">
                                     <mat-card-title>
-                                        <core-ui-text-view [text]="tta.usta" classtouse="bold"></core-ui-text-view>
+                                        <core-ui-text-view [text]="tta.jobtitle" classtouse="bold"></core-ui-text-view>
                                     </mat-card-title>
                                     <div class="downer">
                                         <mat-card-subtitle>
-                                            <core-ui-text-view [text]="tta.prog+'%'" classtouse="blue"></core-ui-text-view>
+                                            <core-ui-text-view [text]="tta.percentage+'%'" classtouse="blue"></core-ui-text-view>
                                         </mat-card-subtitle>
                                     </div>
                                 </div>
                                 <mat-card-subtitle>
-                                    <core-ui-text-view [text]="tta.deta" classtouse="default" layout-wrap></core-ui-text-view>
+                                    <core-ui-text-view [text]="tta.jobdesc" classtouse="default" layout-wrap></core-ui-text-view>
                                 </mat-card-subtitle>
                             </mat-card>
                         </div>
