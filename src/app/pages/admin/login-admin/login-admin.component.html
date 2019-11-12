@@ -6,13 +6,28 @@
         <core-ui-text-view text="Halo,Admin!" classtouse="bold" class="title-login-admin"></core-ui-text-view>
       </div>
         <div class="form-group" fxLayout="row" fxLayoutAlign="center">
-          <core-ui-text-input text="Username" classtouse="admin"></core-ui-text-input><br><br>
+            <input
+            placeholder="Username"
+            type="text"
+            class="admin"
+            [(ngModel)]="username"
+            name="username"
+            class="admin">
         </div><br>
         <div class="form-group" fxLayout="row" fxLayoutAlign="center">
-          <core-ui-text-input text="Password" type="password" classtouse="admin" ></core-ui-text-input><br><br>
+            <input
+            placeholder="Password"
+            type="password"
+            class="admin"
+            [(ngModel)]="password"
+            name="password"
+            class="admin">
         </div><br>
         <div class="form-group">
           <core-ui-button text="Masuk" classtouse="btn-blue btn-login" (click)="login()" style="margin-left: 100px;"></core-ui-button>
+          <mat-spinner *ngIf="loading" [diameter]="30"></mat-spinner>
+          <core-ui-text-view classtouse="red" text="Username or Password are Required" *ngIf="empty"></core-ui-text-view>
+          <core-ui-text-view classtouse="red" text={{errorMessage}} *ngIf="errorLogin"></core-ui-text-view>
         </div>
     </form>
   </div>

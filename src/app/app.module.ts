@@ -54,6 +54,7 @@ import { LoginSceneModule } from './pages/login-scene/login-scene.module';
 import { HeaderComponent } from './components/header/header.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { ArrowDownComponent } from './svg/arrow-down/arrow-down.component';
+import { LoginAdminModule } from './pages/admin/login-admin/login-admin.module';
 
 @NgModule({
   declarations: [
@@ -165,6 +166,7 @@ import { ArrowDownComponent } from './svg/arrow-down/arrow-down.component';
     LoginSceneModule,
     MatMenuModule,
     MatSliderModule,
+    LoginAdminModule,
   ],
   providers: [
     MatDialogModule
