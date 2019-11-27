@@ -1,22 +1,41 @@
 <component-header text="Hello, Kamu dan Kamu"></component-header>
 <div class="row">
-  <div class="column" >
+  <div class="column">
     <component-card-report-title></component-card-report-title>
-    <br>
-    <div *ngFor="let item of objectCard" (click)="selectProject(item)">
-        <card-add-report-dropdown [dataProjectsName]="item.projects" [dataRolesName]="item.roles"></card-add-report-dropdown>
+    <br />
+    <div
+      *ngFor="let item of objectCard; let i = index"
+      (click)="selectProject(i)"
+    >
+      <card-add-report-dropdown
+        [dataProjectsName]="item.projects"
+        [dataRolesName]="item.roles"
+      ></card-add-report-dropdown>
     </div>
-    <br>
+    <br />
     <card-add-report-button (click)="addCardProject()"></card-add-report-button>
   </div>
   <div class="column1">
-    <mat-divider vertical style="height:676px; position: absolute;"></mat-divider>
+    <mat-divider
+      vertical
+      style="height:676px; position: absolute;"
+    ></mat-divider>
   </div>
-  <div class="column2" *ngFor="let obj of selectedData">
-    <card-add-report-detail></card-add-report-detail>
+  <div *ngIf="showDetail">
+    <div class="column2">
+      <card-add-report-detail
+        projectName="{{ selectedDataProject }}"
+        rolesName="{{ selectedDataRole }}"
+      ></card-add-report-detail>
+    </div>
   </div>
 </div>
 
 <div class="bottom-fix">
-  <core-ui-button text="Submit Report" classtouse="btn-free-save"></core-ui-button>
+  <core-ui-button
+    text="Submit Report"
+    classtouse="btn-free-save"
+    (click)="submit()"
+  ></core-ui-button>
+  <mat-spinner *ngIf="loading" [diameter]="30"></mat-spinner>
 </div>

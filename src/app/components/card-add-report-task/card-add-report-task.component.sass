@@ -3,3 +3,158 @@
   border: 1px solid #E7E7E7
   border-radius: 6px
   opacity: 1
+
+.default
+  text-align: left
+  font: Regular 16px/32px Source Sans Pro
+  letter-spacing: 0
+  color: #C7C7C7
+  opacity: 1
+
+.kecil
+  text-align: left
+  font: Regular 14px/32px Source Sans Pro
+  width: 318px
+  height: 40px
+  letter-spacing: 0
+  color: #E7E7E7
+  background: #FFFFFF 0% 0% no-repeat padding-box
+  border: 1px solid #E7E7E7
+  border-radius: 6px
+  opacity: 1
+
+.besar
+  text-align: left
+  font: Regular 14px/32px Source Sans Pro
+  width: 318px
+  height: 120px
+  letter-spacing: 0
+  color: #E7E7E7
+  background: #FFFFFF 0% 0% no-repeat padding-box
+  border: 1px solid #E7E7E7
+  border-radius: 6px
+  opacity: 1
+
+.buttonAddProject
+  background: none
+  text-align: center
+  font: Semibold 12px/32px Source Sans Pro
+  letter-spacing: 0
+  color: #0871CE
+  border: 1px solid #0871CE
+  border-radius: 14px
+  text-align: center
+  font: Semibold 12px/32px Source Sans Pro
+  letter-spacing: 0
+  color: #0871CE
+  opacity: 1
+  top: 448px
+  left: 64px
+  width: 308px
+  height: 28px
+  &:hover
+    color: #fff
+    background: #0871CE 0% 0% no-repeat padding-box
+    cursor: pointer
+.cont
+  text-align: left
+  display: block
+  position: relative
+  padding-left: 35px
+  margin-bottom: 14px
+  cursor: pointer
+  font-size: 14px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  input
+    position: absolute
+    opacity: 0
+    cursor: pointer
+    height: 0
+    width: 0
+
+.checkmark
+  position: absolute
+  left: 0
+  height: 25px
+  width: 25px
+  background-color: #eee
+
+.cont
+  &:hover input ~ .checkmark
+    background-color: #ccc
+  input:checked ~ .checkmark
+    background: #0871CE 0% 0% no-repeat padding-box
+    border-radius: 3px
+    opacity: 1
+
+.checkmark:after
+  content: ""
+  position: absolute
+  display: none
+
+.cont
+  input:checked ~ .checkmark:after
+    display: block
+  .checkmark:after
+    left: 9px
+    top: 5px
+    width: 5px
+    height: 10px
+    border: solid white
+    border-width: 0 3px 3px 0
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    transform: rotate(45deg)
+
+.cage
+  background: #FFFFFF 0% 0% no-repeat padding-box
+  border: 1px solid #E7E7E7
+  border-radius: 6px
+  opacity: 1
+  padding-top: 20px
+  padding-left: 30px
+  width: 60px
+  height: 40px
+
+.pesento
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  margin-bottom: -30px
+  &.space-between
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+
+.mat-slider
+  width: 270px
+
+.mat-slider.mat-slider-horizontal
+  .mat-slider-wrapper
+    top: 18px
+
+  .mat-slider-track-wrapper
+    height: 9px
+    border-radius: 10px
+
+  .mat-slider-track-background
+    height: 100%
+    background-color: #E7E7E7
+
+  .mat-slider-track-fill
+    height: 100%
+    background: #0871CE 0% 0% no-repeat padding-box
+
+.mat-accent .mat-slider-thumb
+  height: 24px
+  width: 24px
+  background-color: white
+  border: solid 2px #0871CE
+  bottom: -15px
+  right: -20px
+
+.mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb
+  background-color: white

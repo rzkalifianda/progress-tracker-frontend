@@ -1,12 +1,41 @@
 <mat-card class="cabor">
-  <core-ui-text-input classtouse="default kecil" text="  Apa yang kamu kerjain?">
-  </core-ui-text-input>
-  <br>
-  <br>
-  <core-ui-text-input classtouse="default besar" text="  Ceritain dong kayak gimana?">
-  </core-ui-text-input>
-  <br>
-  <br>
-  <core-ui-check-box text="Ada progressnya nih" classtouse="cont"></core-ui-check-box>
-
+  <input
+    placeholder="Apa yang kamu kerjain?"
+    class="default kecil"
+    [(ngModel)]="jobTitle"
+  />
+  <br />
+  <br />
+  <input
+    placeholder="Apa yang kamu kerjain?"
+    class="default besar"
+    [(ngModel)]="jobDesc"
+  />
+  <br />
+  <br />
+  <label class="cont">
+    <input type="checkbox" (change)="show = !show" ng-model="show" />
+    <span class="checkmark"></span>Ada Progressnya Nih!
+  </label>
+  <div
+    class="row container-fluid pesento space-between"
+    *ngIf="show"
+    id="divshow"
+  >
+    <mat-slider
+      #progresssize
+      (change)="updateSetting($event)"
+      step="1"
+      min="0"
+      max="100"
+      [value]="progresssize"
+    >
+    </mat-slider>
+    <div class="cage">{{ progresssize.value }}%</div>
+  </div>
+  <br />
+  <br />
+  <button class="buttonAddProject" (click)="save()">
+    Simpan
+  </button>
 </mat-card>
