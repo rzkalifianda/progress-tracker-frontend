@@ -103,6 +103,29 @@ Response Value
 ```
 <br/>
 
+# Delete User (ADMIN HOME SCENE) *Dangerous
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | api/auth/admin/delete-user/:userid |
+| METHOD      | GET |
+| Description | Feature's Endpoint used to delete a user and all of its relation |
+
+Request Header
+```
+authorization : <token app get when login>
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [],
+  message : "User and its relation has been deleted successfully!"
+}
+```
+<br/>
+
 # Login (USER LOGIN SCENE)
 
 | A | B |
@@ -404,6 +427,29 @@ Response Value
 ```
 <br/>
 
+# Delete a Role (ADMIN HOME SCENE) *Dangerous
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | api/feature/admin/delete-role/:roleid |
+| METHOD      | GET |
+| Description | Feature's Endpoint used to delete a role and all of its relation |
+
+Request Header
+```
+authorization : <token app get when login>
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [],
+  message : "Role and its relation has been deleted successfully!"
+}
+```
+<br/>
+
 # Add Projects (ADMIN HOME SCENE)
 
 | A | B |
@@ -431,6 +477,29 @@ Response Value
   success : boolean,
   data : [],
   message : "1 New project successfully inserted."
+}
+```
+<br/>
+
+# Delete a Project (ADMIN HOME SCENE) *Dangerous
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | api/feature/admin/delete-project/:projectid |
+| METHOD      | GET |
+| Description | Feature's Endpoint used to delete a project and all of its relation |
+
+Request Header
+```
+authorization : <token app get when login>
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [],
+  message : "Project and its relation has been deleted successfully!"
 }
 ```
 <br/>
