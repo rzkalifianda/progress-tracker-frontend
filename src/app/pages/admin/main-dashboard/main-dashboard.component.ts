@@ -33,6 +33,9 @@ export class MainDashboardComponent implements OnInit {
   showSearchProject = false;
   showSearchRole = false;
   showSearchUser = false;
+  showModalProject = true;
+  showModalRole = false;
+  showModalUser= false;
   public index: number;
   public selfRef: MainDashboardComponent;
 
@@ -70,6 +73,9 @@ export class MainDashboardComponent implements OnInit {
       this.showSearchRole = false;
       this.showDetailUser = false;
       this.showSearchUser = false;
+      this.showModalProject = true;
+      this.showModalRole = false;
+      this.showModalUser = false;
     } else if (this.selectedMainDashboardDropdown === 'Role') {
       if(this.theSearchResult.length === 0) {
         this.showDetailRole = true;
@@ -82,6 +88,9 @@ export class MainDashboardComponent implements OnInit {
       this.showSearchProject = false;
       this.showDetailUser = false;
       this.showSearchUser = false;
+      this.showModalProject = false;
+      this.showModalRole = true;
+      this.showModalUser = false;
     } else if (this.selectedMainDashboardDropdown === 'User') {
       if(this.theSearchResult.length === 0) {
         this.showDetailUser = true;
@@ -94,6 +103,9 @@ export class MainDashboardComponent implements OnInit {
       this.showSearchRole = false;
       this.showDetailProject = false;
       this.showSearchProject = false;
+      this.showModalProject = false;
+      this.showModalRole = false;
+      this.showModalUser = true;
     }
   }
 

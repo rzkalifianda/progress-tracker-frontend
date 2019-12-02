@@ -1,18 +1,40 @@
+<form class="addUser" method="POST" >
 <h2 style="font-family: Source Sans Pro">Add User</h2>
 <div fxLayout="row" fxLayoutAlign="center center">
     <flex-directive>
-        <core-ui-text-input text="Nama User" classtouse="user"></core-ui-text-input>
+            <input
+            placeholder="Nama User"
+            type="text"
+            class="user"
+            [(ngModel)]="namaUser"
+            name="namaUser">
         <br>
         <br>
-        <core-ui-text-input text="Email User" classtouse="user"></core-ui-text-input>
+        <input
+            placeholder="Email User"
+            type="text"
+            class="user"
+            [(ngModel)]="emailUser"
+            name="emailUser">
         <br>
         <br>
-        <core-ui-text-input text="Username" classtouse="user"></core-ui-text-input>
+        <input
+            placeholder="Username"
+            type="text"
+            class="user"
+            [(ngModel)]="userName"
+            name="userName">
         <br>
         <br>
-        <core-ui-text-input text="Password" classtouse="user"></core-ui-text-input>
+        <input
+            placeholder="Password"
+            type="password"
+            class="user"
+            [(ngModel)]="password"
+            name="password">
     </flex-directive>
 </div>
 
 <br><br>
-<core-ui-button text="Simpan" classtouse="btn-green btn-reportsave"></core-ui-button>
+<core-ui-button text="Simpan" classtouse="btn-green btn-reportsave"  (click)="save()"></core-ui-button>
+</form>

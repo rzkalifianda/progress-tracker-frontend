@@ -4,21 +4,18 @@ import { HttpClient } from "@angular/common/http";
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-modal-data-admin-add',
-  templateUrl: './modal-data-admin-add.component.html',
-  styleUrls: ['./modal-data-admin-add.component.sass'],
+  selector: 'app-modal-data-admin-add-role',
+  templateUrl: './modal-data-admin-add-role.component.html',
+  styleUrls: ['./modal-data-admin-add-role.component.sass'],
 })
-export class ModalDataAdminAddComponent implements OnInit {
+export class ModalDataAdminAddRoleComponent implements OnInit {
 
   constructor(
     private router: Router,
     private httpClient: HttpClient,
   ) { }
 
-  namaUser: string;
-  emailUser: string;
-  userName: string;
-  password: string;
+  roleName: string;
   theData: any;
   errorMessage: string = '';
   errorLogin: boolean = false;
@@ -26,12 +23,9 @@ export class ModalDataAdminAddComponent implements OnInit {
   ngOnInit() {
   }
   save(){
-    this.httpClient.post('https://nameless-cove-75161.herokuapp.com/api/auth/admin/add-user',
+    this.httpClient.post('https://nameless-cove-75161.herokuapp.com/api/feature/admin/add-role',
     {
-      'email' : this.emailUser,
-      'name' : this.namaUser,
-      'username' : this.userName,
-      'password' : this.password
+      'roleName' : this.roleName,
     })
     .subscribe(
       data  => {
@@ -47,6 +41,7 @@ export class ModalDataAdminAddComponent implements OnInit {
       return;
     }
     );
+
   }
 
 }

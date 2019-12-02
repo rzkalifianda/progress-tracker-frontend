@@ -4,6 +4,8 @@ import { ModalDataUserSubmitComponent } from './modal-data-user-submit/modal-dat
 import { ModalDataUserDeleteComponent } from './modal-data-user-delete/modal-data-user-delete.component';
 import { ModalDataUserConfirmationComponent } from './modal-data-user-confirmation/modal-data-user-confirmation.component';
 import { ModalDataAdminAddComponent } from './modal-data-admin-add/modal-data-admin-add.component';
+import { ModalDataAdminAddRoleComponent } from './modal-data-admin-add-role/modal-data-admin-add-role.component';
+import { ModalDataAdminAddProjectComponent } from './modal-data-admin-add-project/modal-data-admin-add-project.component';
 import { ModalDataAdminEditComponent } from './modal-data-admin-edit/modal-data-admin-edit.component';
 import { ModalDataAdminDeleteComponent } from './modal-data-admin-delete/modal-data-admin-delete.component';
 import { ModalService } from './modal.service';
@@ -34,6 +36,10 @@ export class ModalComponent {
       this.openDialogAdminEdit();
     } else if (this.open === 'openDialogAdminDelete') {
       this.openDialogAdminDelete(this.category);
+    } else if (this.open === 'openDialogAdminAddRole') {
+      this.openDialogAdminAddRole();
+    } else if (this.open === 'openDialogAdminAddProject') {
+      this.openDialogAdminAddProject();
     }
 
   }
@@ -75,6 +81,28 @@ export class ModalComponent {
     const dialogRef = this.dialog.open(ModalDataAdminAddComponent , {
       width: '400px',
       height: '450px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  openDialogAdminAddRole(): void {
+    const dialogRef = this.dialog.open(ModalDataAdminAddRoleComponent , {
+      width: '400px',
+      height: '270px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  openDialogAdminAddProject(): void {
+    const dialogRef = this.dialog.open(ModalDataAdminAddProjectComponent , {
+      width: '400px',
+      height: '270px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

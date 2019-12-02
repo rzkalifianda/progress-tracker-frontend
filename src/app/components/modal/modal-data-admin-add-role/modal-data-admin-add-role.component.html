@@ -1,0 +1,17 @@
+<form class="addRole" method="POST">
+<h2 style="font-family: Source Sans Pro">Add Role</h2>
+<div fxLayout="row" fxLayoutAlign="center center">
+    <flex-directive>
+            <input
+            placeholder="Nama Role"
+            type="text"
+            class="user"
+            [(ngModel)]="roleName"
+            name="roleName">
+        <br>
+    </flex-directive>
+</div>
+
+<br><br>
+<core-ui-button text="Simpan" classtouse="btn-green btn-reportsave" (click)="save()"></core-ui-button>
+</form>

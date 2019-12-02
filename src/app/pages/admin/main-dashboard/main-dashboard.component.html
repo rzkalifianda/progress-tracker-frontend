@@ -10,11 +10,18 @@
             <input type="text" #search placeholder="Cari project" onfocus="this.value=''" >
         </form>
 
-
     </div>
-    <div class="beinline-right">
+    <div *ngIf="showModalProject" class="beinline-right">
         <core-ui-button text="Export csv" classtouse="btn-tosca btn-free-homelittle"></core-ui-button>&nbsp;&nbsp;
-        <core-ui-button text="➕ Tambah {{featureTambah}}" classtouse="btn-home-new"></core-ui-button>
+        <component-modal open="openDialogAdminAddProject" text="➕ Tambah {{featureTambah}}" classtouse="btn-home-new"></component-modal>
+    </div>
+    <div *ngIf="showModalRole" class="beinline-right">
+        <core-ui-button text="Export csv" classtouse="btn-tosca btn-free-homelittle"></core-ui-button>&nbsp;&nbsp;
+        <component-modal open="openDialogAdminAddRole" text="➕ Tambah {{featureTambah}}" classtouse="btn-home-new"></component-modal>
+    </div>
+    <div *ngIf="showModalUser" class="beinline-right">
+        <core-ui-button text="Export csv" classtouse="btn-tosca btn-free-homelittle"></core-ui-button>&nbsp;&nbsp;
+        <component-modal open="openDialogAdminAdd" text="➕ Tambah {{featureTambah}}" classtouse="btn-home-new"></component-modal>
     </div>
 </div>
 

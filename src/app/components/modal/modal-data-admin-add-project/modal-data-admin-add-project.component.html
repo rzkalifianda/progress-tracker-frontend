@@ -1,0 +1,17 @@
+<form class="addProject" method="POST" >
+<h2 style="font-family: Source Sans Pro">Add Project</h2>
+<div fxLayout="row" fxLayoutAlign="center center">
+    <flex-directive>
+            <input
+            placeholder="Nama Project"
+            type="text"
+            class="user"
+            [(ngModel)]="projectName"
+            name="projectName">
+        <br>
+    </flex-directive>
+</div>
+
+<br><br>
+<core-ui-button text="Simpan" classtouse="btn-green btn-reportsave" (click)="save()"></core-ui-button>
+</form>
