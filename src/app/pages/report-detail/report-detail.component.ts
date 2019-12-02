@@ -24,7 +24,7 @@ export class UserReportDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if ( this.homeReportService.newdata === undefined) {
+    if (this.homeReportService.newdata === undefined) {
       alert('No Date chosen, please chose the date first');
       this.router.navigateByUrl('home');
     } else {
@@ -34,19 +34,19 @@ export class UserReportDetailComponent implements OnInit {
     this.stringLink = 'https://nameless-cove-75161.herokuapp.com/api/page/report-detail?date=' + this.stringDate;
     const token = localStorage.getItem('userToken');
     const headers = new HttpHeaders()
-            .set('authorization', token);
+      .set('authorization', token);
     this.httpClient.get(this.stringLink,
-    {
-      headers
-    })
-    .subscribe(
-      (response: ResponseObject)  => {
-        this.dataReportDetail = response.data;
-      },
-    error  => {
-      console.log('err', error);
-    }
-    );
+      {
+        headers
+      })
+      .subscribe(
+        (response: ResponseObject) => {
+          this.dataReportDetail = response.data;
+        },
+        error => {
+          console.log('err', error);
+        }
+      );
   }
 
   change(data) {
