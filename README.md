@@ -467,7 +467,7 @@ authorization : <token app get when login>
 Request Body JSON
 ```
 {
-  roleName : string,
+  projectName : string,
 }
 ```
 
