@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { FormControl } from '@angular/forms';
 
 
@@ -21,15 +21,22 @@ export class ModalDataAdminAddProjectComponent implements OnInit {
   errorMessage: string = '';
   errorLogin: boolean = false;
 
+
   ngOnInit() {
 
   }
 
   save(){
+    const token = localStorage.getItem("userToken");
+    let headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      authorization: token
+    });
+    let options = { headers: headers };
     this.httpClient.post('https://nameless-cove-75161.herokuapp.com/api/feature/admin/add-project',
     {
       'projectName' : this.projectName,
-    })
+    }, options)
     .subscribe(
       data  => {
       this.theData = data;

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-data-admin-add',
@@ -23,8 +22,11 @@ export class ModalDataAdminAddComponent implements OnInit {
   errorMessage: string = '';
   errorLogin: boolean = false;
 
+
   ngOnInit() {
+
   }
+
   save(){
     this.httpClient.post('https://nameless-cove-75161.herokuapp.com/api/auth/admin/add-user',
     {
