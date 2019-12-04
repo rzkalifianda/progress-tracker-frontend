@@ -103,6 +103,37 @@ Response Value
 ```
 <br/>
 
+# Edit User (ADMIN HOME SCENE)
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | api/auth/admin/edit-user/:user_id |
+| METHOD      | POST |
+| Description | Feature's Endpoint used to edit a user |
+
+Request Header
+```
+Content-Type: application/json
+authorization : <token app get when login>
+```
+
+Request Body JSON
+```
+{
+  name : string,
+}
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [],
+  message : "Successfully edited a user!"
+}
+```
+<br/>
+
 # Delete User (ADMIN HOME SCENE) *Dangerous
 
 | A | B |
@@ -482,6 +513,37 @@ Response Value
 ```
 <br/>
 
+# Edit Role (ADMIN HOME SCENE)
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | api/feature/admin/edit-role/:role_id |
+| METHOD      | POST |
+| Description | Feature's Endpoint used to edit a role |
+
+Request Header
+```
+Content-Type: application/json
+authorization : <token app get when login>
+```
+
+Request Body JSON
+```
+{
+  roleName : string,
+}
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [],
+  message : "Successfully edited a role!"
+}
+```
+<br/>
+
 # Delete a Role (ADMIN HOME SCENE) *Dangerous
 
 | A | B |
@@ -532,6 +594,37 @@ Response Value
   success : boolean,
   data : [],
   message : "1 New project successfully inserted."
+}
+```
+<br/>
+
+# Edit Project (ADMIN HOME SCENE)
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | api/feature/admin/edit-project/:project_id |
+| METHOD      | POST |
+| Description | Feature's Endpoint used to edit a project |
+
+Request Header
+```
+Content-Type: application/json
+authorization : <token app get when login>
+```
+
+Request Body JSON
+```
+{
+  projectName : string,
+}
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [],
+  message : "Successfully edited a project!"
 }
 ```
 <br/>
