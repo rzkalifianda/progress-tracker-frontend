@@ -38,7 +38,7 @@ export class AddReportComponent implements OnInit {
     }
   ];
   addReportData = {
-    reportDate: "",
+    reportDate: new Date(),
     division: this.divisionAddReportData
   };
 
@@ -95,12 +95,14 @@ export class AddReportComponent implements OnInit {
   }
 
   public showDetailFunction() {
-    if (this.addReportData.reportDate === "") {
+    if (
+      this.addReportData.reportDate !== this.addReportService.getSelectedDate()
+    ) {
       this.divisionAddReportData[0].projectName = this.addReportService.getSelectedProjectName();
       this.divisionAddReportData[0].roleName = this.addReportService.getSelectedRolesName();
       this.divisionAddReportData[0].task = this.taskData;
       this.addReportData = {
-        reportDate: "2019-10-11T17:00:00.000Z",
+        reportDate: this.addReportService.getSelectedDate(),
         division: this.divisionAddReportData
       };
       this.showDetail = true;
@@ -114,6 +116,8 @@ export class AddReportComponent implements OnInit {
   }
 
   submit() {
+    console.log(this.addReportData.reportDate);
+    console.log(this.addReportData.division);
     this.loading = false;
     this.loading = true;
     const token = localStorage.getItem("userToken");

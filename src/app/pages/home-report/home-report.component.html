@@ -4,8 +4,29 @@
   <core-ui-text-input text="Cari" classtouse="kecil"></core-ui-text-input>
 </div>
 
-<div fxLayout="row" fxLayoutAlign="end" style="margin-right:40px">
-  <core-ui-button text="Ada 2 hari yang belum kamu isi nih!" classtouse="btn-alert-yellow"></core-ui-button>
+<div
+  fxLayout="row"
+  fxLayoutAlign="end"
+  style="margin-right:40px"
+  (click)="emptyCard()"
+  *ngIf="!showEmpty"
+>
+  <core-ui-button
+    text="Ada {{ empty }} hari yang belum kamu isi nih!"
+    classtouse="btn-alert-yellow"
+  ></core-ui-button>
+</div>
+<div
+  fxLayout="row"
+  fxLayoutAlign="end"
+  style="margin-right:40px"
+  (click)="allCard()"
+  *ngIf="showEmpty"
+>
+  <core-ui-button
+    text="Tampilkan seluruh hari!"
+    classtouse="btn-alert-yellow"
+  ></core-ui-button>
 </div>
 <br />
 
@@ -13,6 +34,10 @@
 
 <br />
 <div>
-  <core-ui-button text="Lihat lebih banyak" classtouse="btn-tosca btn-free-homelittle" fxLayoutAlign="center">
+  <core-ui-button
+    text="Lihat lebih banyak"
+    classtouse="btn-tosca btn-free-homelittle"
+    fxLayoutAlign="center"
+  >
   </core-ui-button>
 </div>

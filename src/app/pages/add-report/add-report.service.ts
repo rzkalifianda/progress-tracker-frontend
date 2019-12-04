@@ -19,6 +19,7 @@ export class AddReportService {
     progress: 0
   };
   private index: number = 0;
+  private selectedDate: Date;
 
   getIndex() {
     return this.index;
@@ -75,5 +76,13 @@ export class AddReportService {
 
   getTask() {
     return this.task;
+  }
+
+  setSelectedDate(date: Date) {
+    this.selectedDate = date;
+  }
+
+  getSelectedDate() {
+    return this.selectedDate;
   }
 }

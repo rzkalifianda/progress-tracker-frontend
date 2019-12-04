@@ -1,3 +1,4 @@
+import { AddReportService } from "src/app/pages/add-report/add-report.service";
 import { AppService } from "./../../app.service";
 import { Component, OnInit, NgModule, Input } from "@angular/core";
 import { MatCardModule } from "@angular/material";
@@ -14,26 +15,23 @@ export class CardComponent implements OnInit {
   @Input() dataHome: any = {};
 
   constructor(
-    private appService: AppService,
-    private activatedRoutes: ActivatedRoute,
     private router: Router,
-    private homeReportService: HomeReportService
-  ) { }
+    private homeReportService: HomeReportService,
+    private addReportService: AddReportService
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
-  addReport() {
-    this.router.navigateByUrl('home/add-report');
+  addReport(date: Date) {
+    this.addReportService.setSelectedDate(date);
+    this.router.navigateByUrl("home/add-report");
   }
 
   reportDetail(reportdate: string) {
     this.homeReportService.newdata = reportdate;
-    console.log(this.homeReportService.newdata);
-    this.router.navigateByUrl('home/report-detail');
-    console.log(reportdate);
+    this.router.navigateByUrl("home/report-detail");
   }
 
-  ngOnChanges() {
-    console.log('cardComponent', this.dataHome);
-  }
+  ngOnChanges() {}
 }
