@@ -253,6 +253,108 @@ Response Value
 ```
 <br/>
 
+# User Report Detail (USER REPORT DETAIL)
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | /api/page/report-detail?date=YYYY-MM-DD  |
+| METHOD      | GET |
+| Description | Endpoint used for getting all report detail from 1 user |
+
+Request Header
+```
+Content-Type: application/json
+authorization : <token app get when login>
+```
+
+Request Body JSON
+```
+-
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [
+    {
+      id: number,
+      projectname: string,
+      rolename: string,
+      task: [
+        {
+          id: number,
+          jobtitle: string,
+          jobdesc: string,
+          percentage: number,
+          divisionid: number,
+        },
+        ...
+      ]
+    },
+    ...
+  ]
+  message : "Successfully get user's reports"
+}
+```
+<br/>
+
+# Admin Report Detail (ADMIN ALL REPORT DETAIL)
+
+| A | B |
+| ----------- | ------------- |
+| FETCH       | /api/page/admin/report-detail?filterBy=roles/projects&id=roleID/projectID&date=YYYY-MM-DD |
+| METHOD      | GET |
+| Description | Endpoint used for getting all report detail from all user |
+
+Request Header
+```
+Content-Type: application/json
+authorization : <token app get when login>
+```
+
+Request Body JSON
+```
+-
+```
+
+Response Value
+```
+{
+  success : boolean,
+  data : [
+    {
+      rolename: string,
+      reportdate: Date,
+      projects: Array[
+        {
+          projectname: "Snapin",
+          task: Array[
+            {
+              name: string,
+              jobs: Array[
+                {
+                  jobtitle: string,
+                  jobdesc: string,
+                  percentage: number
+                },
+                ...
+              ]
+            },
+            ...
+          ]
+        },
+        ...
+      ],
+    },
+    ...
+  ]
+  message : "Successfully get user's reports"
+}
+```
+<br/>
+
+
 # UserHome (USER HOME SCENE)
 
 | A | B |
@@ -346,53 +448,6 @@ Response Value
 }
 ```
 <br/>
-
-# User Report Detail (USER REPORT DETAIL)
-
-| A | B |
-| ----------- | ------------- |
-| FETCH       | /api/page/report-detail?date=YYYY-MM-DD  |
-| METHOD      | GET |
-| Description | Endpoint used for getting all report detail from 1 user |
-
-Request Header
-```
-Content-Type: application/json
-authorization : <token app get when login>
-```
-
-Request Body JSON
-```
--
-```
-
-Response Value
-```
-{
-  success : boolean,
-  data : [
-    {
-      id: number,
-      projectname: string,
-      rolename: string,
-      task: [
-        {
-          id: number,
-          jobtitle: string,
-          jobdesc: string,
-          percentage: number,
-          divisionid: number,
-        },
-        ...
-      ]
-    },
-    ...
-  ]
-  message : "Successfully get user's reports"
-}
-```
-<br/>
-
 
 ## Features
 
