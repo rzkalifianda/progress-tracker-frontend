@@ -135,7 +135,6 @@ export class ModalComponent {
 
   ngOnInit() {
     console.log(this.open);
-    console.log(this.classtouse);
   }
 
 }

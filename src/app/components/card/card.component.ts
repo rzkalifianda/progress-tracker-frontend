@@ -30,7 +30,7 @@ export class CardComponent implements OnInit {
 
   reportDetail(reportdate: string) {
     this.homeReportService.newdata = reportdate;
-    this.router.navigateByUrl("home/report-detail");
+    this.router.navigateByUrl('home/report-detail');
   }
 
   ngOnChanges() {}

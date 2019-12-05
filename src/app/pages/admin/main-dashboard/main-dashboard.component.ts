@@ -42,6 +42,7 @@ export class MainDashboardComponent implements OnInit {
 
   theSearchResult = '';
   theCurrentChosen = '';
+  theCurrentChosenID = '';
   featureTambah = '';
 
   mainDashboards = [];
@@ -158,5 +159,6 @@ export class MainDashboardComponent implements OnInit {
     } else if (this.selectedMainDashboardDropdown === 'User') {
       this.theCurrentChosen = chosenData.username;
     }
+    this.theCurrentChosenID = chosenData.id;
   }
 }

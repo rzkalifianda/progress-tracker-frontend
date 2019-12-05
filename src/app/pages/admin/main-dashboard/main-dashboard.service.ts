@@ -6,8 +6,9 @@ import { Injectable, Output } from '@angular/core';
 export class MainDashboardService {
 
   constructor() { }
-  private selectedMainDashboardCategory: string = '';
-  private selectedID: number;
+  selectedMainDashboardCategory: string = '';
+  selectedID: string = '';
+  selectedName: string = '';
 
   getSelectedMainDashboardCategory() {
     return this.selectedMainDashboardCategory;
@@ -16,10 +17,17 @@ export class MainDashboardService {
     this.selectedMainDashboardCategory = selectedMainDashboardCategory;
   }
 
+  getSelectedName() {
+    return this.selectedName;
+  }
+  setSelectedName(selectedID: string) {
+    this.selectedName = this.selectedName;
+  }
+
   getSelectedID() {
     return this.selectedID;
   }
-  setSelectedID(selectedID: number) {
+  setSelectedID(selectedID: string) {
     this.selectedID = selectedID;
   }
 }

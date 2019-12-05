@@ -4,9 +4,9 @@
 
 <div style="text-align: center; font-family: Source Sans Pro">
     <p>Halo, <b>Admin</b></p>
-    <p>Apakah kamu yakin ingin <b>menghapus</b> {{ category }} ini?</p>
+    <p>Apakah kamu yakin ingin <b>menghapus {{ category }}</b> ini?</p>
 </div>
 
-<core-ui-button text="Gajadi hapus deh" classtouse="btn-green btn-popup-deletecancel"></core-ui-button>
+<core-ui-button text="Gajadi hapus deh" (click)="onCancel()" classtouse="btn-green btn-popup-deletecancel"></core-ui-button>
   <br><br>
-<core-ui-button text="Hapus aja gapapa" classtouse="btn-red btn-popup-deleteconfirm"></core-ui-button>
+<core-ui-button text="Hapus aja gapapa" (click)="onConfirm()" classtouse="btn-red btn-popup-deleteconfirm"></core-ui-button>

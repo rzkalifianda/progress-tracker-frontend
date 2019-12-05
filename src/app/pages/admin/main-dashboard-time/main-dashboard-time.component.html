@@ -5,8 +5,9 @@
             <core-ui-button text="Export csv" classtouse="btn-tosca btn-free-homelittle" style="margin-left: 995px; padding-top: 100px"></core-ui-button>
         </div>
         <div style="display: inline-block; width: 250px; height: 20px;">
-            <core-ui-text-view text="Dinas Kesehatan" classtouse="bold"></core-ui-text-view>
+            <core-ui-text-view text="{{dataName}}" classtouse="bold"></core-ui-text-view>
         </div>
+
         <div style="display: inline-block; width: 60px; height: 20px;">
             <core-ui-text-view text="Lihat : " classtouse="bold"></core-ui-text-view>
         </div>
@@ -20,7 +21,12 @@
             <input id="date" type="date" value="">
         </div>
 
-        <div>
+        <div *ngIf="showEmptyData">
+            <div class="cabor">Empty Data</div>
+        </div>
+
+
+        <div *ngIf="showNameProject">
             <mat-card *ngFor="let item of objectCard" (click)="onClick()" class="cabor">
                 <mat-card-header>
                     <mat-card-title class="title">{{ item.reportdate | date:'fullDate'}}</mat-card-title>
@@ -28,10 +34,24 @@
                 <hr />
                 <mat-card-content  class="content" *ngFor="let role of item.rolename.slice(0,3)">
                     <div>
-                        {{role}}
+                        <svg-group1191></svg-group1191> {{role}}
                     </div>
                 </mat-card-content>
                 <p class="content" *ngIf="item.rolename.length > 3">{{'+ ' + (item.rolename.length - 3) + ' role lainnya'}}</p>
+            </mat-card>
+        </div>
+        <div *ngIf="showNameRoles">
+            <mat-card *ngFor="let item of objectCard" (click)="onClick()" class="cabor">
+                <mat-card-header>
+                    <mat-card-title class="title">{{ item.reportdate | date:'fullDate'}}</mat-card-title>
+                </mat-card-header>
+                <hr />
+                <mat-card-content  class="content" *ngFor="let project of item.projectname.slice(0,3)">
+                    <div>
+                        <svg-group1191></svg-group1191> {{project}}
+                    </div>
+                </mat-card-content>
+                <p class="content" *ngIf="item.projectname.length > 3">{{'+ ' + (item.projectname.length - 3) + ' project lainnya'}}</p>
             </mat-card>
         </div>
     </section>
