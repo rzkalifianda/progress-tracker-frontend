@@ -50,6 +50,9 @@ export class AddReportComponent implements OnInit {
   ) {}
 
   async ngOnInit() {
+    if (localStorage.getItem("userToken") === null) {
+      this.router.navigateByUrl("");
+    }
     const token = localStorage.getItem("userToken");
     const headers = new HttpHeaders().set("authorization", token);
     await this.httpClient
