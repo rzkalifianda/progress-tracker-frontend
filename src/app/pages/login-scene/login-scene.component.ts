@@ -47,7 +47,6 @@ export class LoginSceneComponent implements OnInit {
       data  => {
       this.theData = data;
       if (this.theData.success === true) {
-        console.log(this.theData);
         localStorage.setItem('userToken', this.theData.token);
         localStorage.setItem('userName', this.theData.data[0].name);
         localStorage.setItem('role', 'user');
