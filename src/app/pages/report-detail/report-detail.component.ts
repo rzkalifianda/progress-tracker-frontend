@@ -22,6 +22,7 @@ export class UserReportDetailComponent implements OnInit {
   stringDate = "";
   stringLink = "";
   dataReportDetail: any;
+  userName : any;
 
   @ViewChildren("commentCard", { read: ElementRef }) commentCardList: QueryList<
     ElementRef

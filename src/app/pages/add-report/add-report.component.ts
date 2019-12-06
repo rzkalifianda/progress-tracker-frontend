@@ -20,6 +20,7 @@ export class AddReportComponent implements OnInit {
   selectedDataProject = "";
   selectedDataRole = "";
   loading: boolean = false;
+  userName: any;
 
   showDetail = false;
 
@@ -54,6 +55,7 @@ export class AddReportComponent implements OnInit {
       this.router.navigateByUrl("");
     }
     const token = localStorage.getItem("userToken");
+    this.userName = localStorage.getItem("userName");
     const headers = new HttpHeaders().set("authorization", token);
     await this.httpClient
       .get("https://nameless-cove-75161.herokuapp.com/api/page/project-role", {

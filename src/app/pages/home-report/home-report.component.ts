@@ -19,6 +19,7 @@ export class HomeReportComponent implements OnInit {
     private homereportService: HomeReportService
   ) {}
 
+  userName: any;
   dataHome: any = {};
   dataNull: any = [];
   pembanding = [];
@@ -36,6 +37,7 @@ export class HomeReportComponent implements OnInit {
       this.router.navigateByUrl("");
     }
     const token = localStorage.getItem("userToken");
+    this.userName = localStorage.getItem("userName");
     const headers = new HttpHeaders().set("authorization", token);
     await this.httpClient
       .get("https://nameless-cove-75161.herokuapp.com/api/page/home", {

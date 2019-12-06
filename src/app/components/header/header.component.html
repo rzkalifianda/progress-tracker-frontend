@@ -10,7 +10,7 @@
         <button class="dropdown" at-button [matMenuTriggerFor]="belowMenu">{{text}}</button>
         <mat-menu #belowMenu="matMenu" yPosition="below">
             <button mat-menu-item>Forgot Password</button>
-            <button mat-menu-item>Sign Out</button>
+            <button mat-menu-item (click)="logout()">Sign Out</button>
         </mat-menu>
     </div>
 </div>

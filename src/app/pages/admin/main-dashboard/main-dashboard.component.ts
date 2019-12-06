@@ -14,6 +14,7 @@ export class MainDashboardComponent implements OnInit {
   dataProjectName: any;
   dataRoleName: any;
   dataUserName: any;
+  userName: any;
 
   @Input() dataProjectsName;
   @Input() dataRolesName;

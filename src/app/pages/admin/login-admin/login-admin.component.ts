@@ -49,6 +49,7 @@ export class LoginAdminComponent implements OnInit {
         console.log(this.theData);
         if (this.theData.success === true) {
           localStorage.setItem('adminToken', this.theData.token);
+          localStorage.setItem('role', 'admin');
           this.loginService.setLoginData(this.theData);
           this.router.navigateByUrl('/home-admin');
         } else {
